@@ -1,0 +1,889 @@
+---
+title: "Chapter 07: Linked Lists"
+author: "Mbah Boedy"
+output:
+  ioslides_presentation: default
+  slidy_presentation: default
+autosize: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<style>
+slides > slide { overflow: scroll; }
+slides > slide:not(.nobackground):after {
+  content: '';
+}
+</style>
+
+
+## Singly Linked Lists [1/4]
+
+- A **singly linked list**, in its simplest form, is a collection of **nodes** that collectively form a linear sequence. 
+- Each node stores a **reference to an object** that is an element of the sequence, as well as a **reference to the next node** of the list.
+
+![](./Chapter07-figure/singly_linked_list_node_representation.png)
+
+
+## Singly Linked Lists [2/4]
+
+- The **first** and **last** node of a linked list are known as the **head** and **tail** of the list, respectively. 
+- By starting at the head, and moving from one node to another by following each node’s next reference, we can reach the tail of the list. 
+- We can identify the **tail** as the node having **None** as its next reference. 
+- This process is commonly known as **traversing** the linked list. 
+- Because the next reference of a node can be viewed as a link or pointer to another node, the process of **traversing** a list is also known as **link hopping** or **pointer hopping**.
+
+## Singly Linked Lists [3/4]
+
+![](./Chapter07-figure/singly_linked_list_representation.png)
+
+- Without an explicit reference to the head, there would be no way to locate that node (or indirectly, any others). 
+- There is not an absolute need to store a direct reference to the tail of the list, as it could otherwise be located by starting at the head and traversing the rest of the list. 
+- However, storing an explicit reference to the tail node is a common convenience to avoid such a traversal. 
+- In similar regard, it is common for the linked list instance to keep a **count of the total number of nodes** that comprise the list (commonly described as the **size** of the list), to avoid the need to traverse the list to count the nodes.
+
+## Singly Linked Lists [4/4]
+
+![](./Chapter07-figure/singly_linked_list_compact_representation.png)
+
+## Inserting an Element at the Head of a Singly Linked List
+
+![](./Chapter07-figure/singly_linked_list_head_insert.png)
+
+
+## Inserting an Element at the Tail of a Singly Linked List
+
+![](./Chapter07-figure/singly_linked_list_tail_insert.png)
+
+## Removing an Element from a Singly Linked List [1/2]
+
+![](./Chapter07-figure/singly_linked_list_head_remove.png)
+
+## Removing an Element from a Singly Linked List [2/2]
+
+- Unfortunately, we cannot easily delete the last node of a singly linked list. 
+- Even if we maintain a tail reference directly to the last node of the list, we must be able to access the node before the last node in order to remove the last node. 
+- But we cannot reach the node before the tail by following next links from the tail. 
+- The only way to access this node is to start from the head of the list and search all the way through the list. 
+- But such a sequence of link-hopping operations could take a long time. 
+- If we want to support such an operation efficiently, we will need to make our list **doubly linked**.
+
+## Implementing a Stack with a Singly Linked List [1/2]
+
+Following is the Python implementation for node:
+
+```{python, eval=TRUE}
+class Node:
+  __slots__ = '_element' , '_next'    # streamline memory usage
+  
+  def __init__(self, element, next):  # initialize node’s fields
+    self._element = element           # reference to user’s element
+    self._next = next                 # reference to next node
+```
+
+```{python, eval=FALSE}
+node1 = Node('a', None)
+node2 = Node('b', node1)
+```
+
+## Implementing a Stack with a Singly Linked List [2/2]
+
+```{python, eval=TRUE}
+class LinkedStack:
+
+#-------------------------- nested Node class --------------------------
+  class _Node:
+    __slots__ = '_element' , '_next'    # streamline memory usage
+    
+    def __init__(self, element, next):  # initialize node’s fields
+      self._element = element           # reference to user’s element
+      self._next = next                 # reference to next node
+
+#---------------------------- stack methods ----------------------------
+  def __init__(self):
+    self._head = None   # reference to the head node
+    self._size = 0      # number of stack elements
+    
+  def __len__(self):
+    return self._size
+    
+  def is_empty(self):
+    return self._size == 0
+    
+  def push(self, e):
+    self._head = self._Node(e, self._head) # create and link a new node
+    self._size += 1
+
+  def top(self):
+    if self.is_empty():
+      raise Empty('Stack is empty')
+    return self._head._element # top of stack is at head of list
+    
+  def pop(self):
+    if self.is_empty():
+      raise Empty('Stack is empty')
+    answer = self._head._element
+    self._head = self._head._next # bypass the former top node
+    self._size -= 1
+    return answer
+```
+
+## Implementing a Queue with a Singly Linked List
+
+````{python, eval=TRUE}
+class LinkedQueue:
+
+#-------------------------- nested Node class --------------------------
+  class _Node:
+    __slots__ = '_element' , '_next'    # streamline memory usage
+    
+    def __init__(self, element, next):  # initialize node’s fields
+      self._element = element           # reference to user’s element
+      self._next = next                 # reference to next node
+
+#---------------------------- queue methods ----------------------------
+  def __init__(self):
+    self._head = None
+    self._tail = None
+    self._size = 0  # number of queue elements
+    
+  def __len__(self):
+    return self._size
+    
+  def is_empty(self):
+    return self._size == 0
+    
+  def first(self):
+    if self.is_empty():
+      raise Empty('Queue is empty')
+      
+    return self._head._element    # front aligned with head of list
+  
+  def dequeue(self):
+    if self.is_empty():
+      raise Empty('Queue is empty')
+    
+    answer = self._head._element
+    self._head = self._head._next
+    self._size -= 1
+    
+    if self.is_empty():   # special case as queue is empty
+      self._tail = None   # removed head had been the tail
+    
+    return answer
+    
+  def enqueue(self, e):
+    newest = self._Node(e, None)  # node will be new tail node
+    
+    if self.is_empty():
+      self._head = newest         # special case: previously empty
+    else:
+      self._tail._next = newest
+    
+    self._tail = newest           # update reference to tail node
+    self._size += 1
+````
+
+## Circularly Linked Lists [1/2]
+
+- A **circularly linked list** is a linked list which the tail of the list use its next reference to point back to the head
+of the list.
+- A circularly linked list provides a more general model than a standard linked list for data sets that are **cyclic**, that is, which do not have any particular notion of a **beginning** and **end**.
+
+![](./Chapter07-figure/circularly_linked_list_representation1.png)
+
+## Circularly Linked Lists [2/2]
+
+![](./Chapter07-figure/circularly_linked_list_representation2.png)
+
+- Even though a circularly linked list has no beginning or end, per se, we must maintain a reference to a particular node in order to make use of the list. 
+We use the identifier current to describe such a designated node. 
+By setting ``current = current.next``, we can effectively advance through the nodes of the list.
+
+## Round-Robin Schedulers
+
+- To motivate the use of a circularly linked list, we consider a **round-robin** scheduler, which iterates through a collection of elements in a circular fashion and “services” each element by performing a given action on it. 
+- Such a scheduler is used, for example, to fairly allocate a resource that must be shared by a collection of clients.
+- For instance, round-robin scheduling is often used to allocate slices of CPU time to various applications running concurrently on a computer.
+
+![](./Chapter07-figure/round_robin_scheduler.png)
+
+## Implementing a Queue with a Circularly Linked List
+
+```{python, eval=TRUE}
+class CircularQueue:
+  
+#-------------------------- nested Node class --------------------------
+  class _Node:
+    __slots__ = '_element' , '_next'    # streamline memory usage
+    
+    def __init__(self, element, next):  # initialize node’s fields
+      self._element = element           # reference to user’s element
+      self._next = next                 # reference to next node
+
+#----------------------- circular queue methods ------------------------
+
+  def __init__(self):
+    self._tail = None   # will represent tail of queue
+    self._size = 0      # number of queue elements
+
+  def __len__(self):
+    return self._size
+
+  def is_empty(self):
+    return self._size == 0
+  
+  def first(self):
+    if self.is_empty():
+      raise Empty('Queue is empty')
+    
+    head = self._tail._next
+    return head. element
+
+  def dequeue(self):
+    if self.is_empty():
+      raise Empty('Queue is empty')
+    
+    oldhead = self._tail._next    
+
+    if self._size == 1:   # removing only element
+      self._tail = None   # queue becomes empty
+    else:
+      self._tail._next = oldhead._next  # bypass the old head
+      self._size -= 1
+
+    return oldhead._element
+
+  def enqueue(self, e):
+    newest = self._Node(e, None)      # node will be new tail node
+
+    if self.is_empty():
+      newest._next = newest           # initialize circularly
+    else:
+      newest._next = self._tail._next # new node points to head
+      self._tail._next = newest       # old tail points to new node
+
+    self._tail = newest               # new node becomes the tail
+    self._size += 1
+
+  def rotate(self):
+    if self._size > 0:
+      self._tail = self._tail._next   # old head becomes new tail
+```
+
+## Doubly Linked Lists
+
+- In a singly linked list, each node maintains a reference to the node that is immediately after it.
+- We emphasized that we can efficiently insert a node at either end of a singly linked list, and can delete a node at the head of a list, but we are unable to efficiently delete a node at the tail of the list.
+- To provide greater symmetry, we define a linked list in which each node keeps an explicit reference to the node before it and a reference to the node after it. Such a structure is known as a **doubly linked list**.
+
+## Header and Trailer Sentinels
+
+- In order to avoid some special cases when operating near the boundaries of a doubly linked list, it helps to add special nodes at both ends of the list: a **header** node at the beginning of the list, and a **trailer** node at the end of the list. 
+- These “dummy” nodes are known as **sentinels** (or guards), and they do not store elements of the primary sequence.
+- When using sentinel nodes, an empty list is initialized so that the next field of the header points to the trailer, and the prev field of the trailer points to the header.
+
+![](./Chapter07-figure/doubly_linked_list_representation.png)
+
+## Advantage of Using Sentinels
+
+- Although we could implement a doubly linked list without sentinel nodes, the slight extra space devoted to the sentinels greatly simplifies the logic of our operations. 
+- Most notably, the header and trailer nodes never change; only the nodes between them change.
+- We can treat all insertions in a unified manner, because a new node will always be placed between a pair of existing nodes. 
+- In similar fashion, every element that is to be deleted is guaranteed to be stored in a node that has neighbors on each side.
+
+## Inserting and Deleting with a Doubly Linked List [1/3]
+
+When a new element is inserted at the front of the sequence, we will simply add the new node between the header and the node that is currently after the header.
+
+![](./Chapter07-figure/doubly_linked_list_head_insert.png)
+
+## Inserting and Deleting with a Doubly Linked List [2/3]
+
+![](./Chapter07-figure/doubly_linked_list_insert.png)
+
+## Inserting and Deleting with a Doubly Linked List [3/3]
+
+![](./Chapter07-figure/doubly_linked_list_remove.png)
+
+## Basic Implementation of a Doubly Linked List [1/2]
+
+- With array-based sequences, an integer index was a convenient means for describing a position within a sequence. 
+- However, an index is not convenient for linked lists as there is no efficient way to find the $j^{th}$ element; it would seem to require a traversal of a portion of the list.
+- When working with a linked list, the most direct way to describe the location of an operation is by identifying a relevant node of the list. 
+- However, we prefer to encapsulate the inner workings of our data structure to avoid having users directly access nodes of a list.
+
+```{python, eval=TRUE}
+class _Node:
+  """Lightweight, nonpublic class for storing a doubly linked node."""
+  __slots__ = '_element' , '_prev' , '_next' # streamline memory
+  
+  def __init__(self, element, prev, next):  # initialize node’s fields
+    self._element = element                 # user’s element
+    self._prev = prev                       # previous node reference
+    self._next = next                       # next node reference
+```
+
+## Basic Implementation of a Doubly Linked List [2/2]
+
+```{python, eval=FALSE}
+class _DoublyLinkedBase:
+  """A base class providing a doubly linked list representation."""
+  class _Node:
+    """Lightweight, nonpublic class for storing a doubly linked node."""
+    __slots__ = '_element' , '_prev' , '_next' # streamline memory
+  
+    def __init__(self, element, prev, next):
+      self._element = element               
+      self._prev = prev                     
+      self._next = next
+  
+  def __init__(self):
+    """Create an empty list."""
+    self._header = self._Node(None, None, None)
+    self._trailer = self._Node(None, None, None)
+    
+    self._header._next = self._trailer  # trailer is after header
+    self._trailer._prev = self._header  # header is before trailer
+    self._size = 0 # number of elements
+
+  def __len__(self):
+    """Return the number of elements in the list."""
+    return self._size
+
+  def is_empty(self):
+    """Return True if list is empty."""
+    return self._size == 0
+
+  def _insert_between(self, e, predecessor, successor):
+    """Add element e between two existing nodes and return new node."""
+    newest = self._Node(e, predecessor, successor) # linked to neighbors
+    newest._next = successor
+    newest._prev = predecessor
+    predecessor._next = newest
+    successor._prev = newest
+    self._size += 1
+    return newest
+
+  def _delete_node(self, node):
+    """Delete nonsentinel node from the list and return its element."""
+    predecessor = node._prev
+    successor = node._next
+    predecessor._next = successor
+    successor._prev = predecessor
+    self._size -= 1
+    element = node._element # record deleted element
+    node._prev = node._next = node._element = None  # deprecate node
+    return element  # return deleted element
+```
+
+## Implementing a Deque with a Doubly Linked List [1/3]
+
+- With the use of sentinels, the key to our implementation is to remember that the header does not store the first element of the deque; it is the node just **after** the **header** that stores the **first** element (assuming the deque is nonempty).
+- Similarly, the node just **before** the **trailer** stores the **last** element of the deque.
+
+## Implementing a Deque with a Doubly Linked List [2/3]
+
+- We use the inherited ``_insert_between`` method to insert at either end of the deque. 
+- To **insert** an element at the **front** of the deque, we place it immediately between the header and the node just after the header. 
+- An **insertion** at the end of deque is placed immediately before the trailer node. 
+- Note that these operations succeed, even when the deque is empty; in such a situation, the new node is placed between the two sentinels. 
+- When deleting an element from a nonempty deque, we rely upon the inherited ``_delete_node`` method, knowing that the designated node is assured to have neighbors on each side.
+
+## Implementing a Deque with a Doubly Linked List [3/3]
+
+```{python, eval=FALSE}
+class LinkedDeque(_DoublyLinkedBase): # note the use of inheritance
+  """Double-ended queue implementation based on a doubly linked list."""
+
+  def first(self):
+    """Return (but do not remove) the element at the front of the deque."""
+    if self.is_empty():
+      raise Empty("Deque is empty")
+    
+    return self._header._next._element # real item just after header
+
+  def last(self):
+    """Return (but do not remove) the element at the back of the deque."""
+    if self.is_empty():
+      raise Empty("Deque is empty")
+    
+    return self._trailer._prev._element # real item just before trailer
+
+  def insert_first(self, e):
+    """Add an element to the front of the deque."""
+    self._insert_between(e, self._header, self._header._next) # after header
+
+  def insert_last(self, e):
+    """Add an element to the back of the deque."""
+    self._insert_between(e, self._trailer._prev, self._trailer) # before trailer
+
+  def delete_first(self):
+    """Remove and return the element from the front of the deque.
+    Raise Empty exception if the deque is empty."""
+    if self.is_empty():
+      raise Empty("Deque is empty")
+
+    return self._delete_node(self._header._next)  # use inherited method
+
+  def delete_last(self):
+    """Remove and return the element from the back of the deque.
+    Raise Empty exception if the deque is empty."""
+    if self.is_empty():
+      raise Empty("Deque is empty")
+    
+    return self._delete_node(self._trailer._prev) # use inherited method
+```
+
+```{python, eval=FALSE}
+x = LinkedDeque()
+
+x.insert_first('satu')
+x.insert_last('dua')
+x.insert_first('tiga')
+x.insert_last('empat')
+x.insert_first('lima')
+
+print(x.first())
+print(x.last())
+print(x.delete_first())
+print(x.first())
+print(x.delete_last())
+print(x.last())
+```
+
+## The Positional List ADT
+
+- The abstract data types that we have considered thus far, namely stacks, queues, and double-ended queues, only allow update operations that occur at one end of a sequence or the other.
+- We would like to design an abstract data type that provides a user a way to refer to elements anywhere in a sequence, and to perform arbitrary insertions and deletions.
+
+![](./Chapter07-figure/positional_list_representation.png)
+
+## The Positional List Abstract Data Type [1/7]
+
+- To provide for a general abstraction of a sequence of elements with the ability to identify the location of an element, we define a **positional list ADT** as well as a simpler **position** abstract data type to describe a location within a list. 
+- A position acts as a **marker** or **token** within the broader positional list. 
+- A position ``p`` is unaffected by changes elsewhere in a list; the only way in which a position becomes invalid is if an explicit command is issued to delete it.
+- A position instance is a simple object, supporting only the following method:
+    + ``p.element()``: Return the element stored at position ``p``.
+
+## The Positional List Abstract Data Type [2/7]
+
+- In the context of the positional list ADT, **positions** serve as parameters to some methods and as return values from other methods. 
+- In describing the behaviors of a positional list, we being by presenting the accessor methods supported by a list ``L``:
+    + ``L.first()``: Return the position of the first element of ``L``, or ``None`` if ``L`` is empty.
+    + ``L.last()``: Return the position of the last element of ``L``, or None if ``L`` is empty.
+    + ``L.before(p)``: Return the position of ``L`` immediately before position ``p``, or ``None`` if ``p`` is the first position.
+    + ``L.after(p)``: Return the position of ``L`` immediately after position ``p``, or ``None`` if ``p`` is the last position.
+    + ``L.is_empty()``: Return ``True`` if list ``L`` does not contain any elements.
+    + ``len(L)``: Return the number of elements in the list.
+    + ``iter(L)``: Return a forward iterator for the elements of the list.
+
+## The Positional List Abstract Data Type [3/7]
+
+- The positional list ADT also includes the following update methods:
+    + ``L.add_first(e)``: Insert a new element ``e`` at the front of ``L``, returning the position of the new element.
+    + ``L.add_last(e)``: Insert a new element ``e`` at the back of ``L``, returning the position of the new element.
+    + ``L.add_before(p, e)``: Insert a new element ``e`` just before position ``p`` in ``L``, returning the position of the new element.
+    + ``L.add_after(p, e)``: Insert a new element ``e`` just after position ``p`` in ``L``, returning the position of the new element.
+    + ``L.replace(p, e)``: Replace the element at position ``p`` with element ``e``, returning the element formerly at position ``p``.
+    + ``L.delete(p)``: Remove and return the element at position ``p`` in ``L``, invalidating the position.
+
+## The Positional List Abstract Data Type [4/7]
+
+- Note well that the ``first()`` and ``last()`` methods of the positional list ADT return the associated positions, not the elements. (This is in contrast to the corresponding first and last methods of the deque ADT.) 
+- The first element of a positional list can be determined by subsequently invoking the element method on that position, as ``L.first().element()``. 
+- The advantage of receiving a position as a return value is that we can use that position to navigate the list. 
+
+## The Positional List Abstract Data Type [5/7]
+
+- The following code fragment prints all elements of a positional list named data.
+
+```{python, eval=FALSE}
+cursor = data.first()
+while cursor is not None:
+  print(cursor.element())     # print the element stored at the position
+  cursor = data.after(cursor) # advance to the next position (if any)
+```
+
+- This code relies on the stated convention that the ``None`` object is returned when ``after`` is called upon the **last position**. 
+- That return value is clearly distinguishable from any legitimate position. 
+- The positional list ADT similarly indicates that the ``None`` value is returned when the ``before`` method is invoked at the **front of the list**, or when ``first`` or ``last`` methods are called upon an **empty list**. 
+- Therefore, the above code fragment works correctly even if the data list is empty.
+
+## The Positional List Abstract Data Type [6/7]
+
+Because the ADT includes support for Python’s ``iter`` function, users may rely on the traditional for-loop syntax for such a forward traversal of a list named data.
+
+```{python, eval=FALSE}
+for e in data:
+  print(e)
+```
+
+## The Positional List Abstract Data Type [7/7]
+
+![](./Chapter07-figure/positional_list_operation_example.png)
+
+## Doubly Linked List Implementation
+
+```{python, eval=FALSE}
+class PositionalList(_DoublyLinkedBase):
+  """A sequential container of elements allowing positional access."""
+  
+  #-------------------------- nested Position class --------------------------
+  class Position:
+    """An abstraction representing the location of a single element."""
+    def __init__(self, container, node):
+      """Constructor should not be invoked by user."""
+      self._container = container
+      self._node = node
+  
+    def element(self):
+      """Return the element stored at this Position."""
+      return self._node._element
+  
+    def __eq__(self, other):
+      """Return True if other is a Position representing the same location."""
+      return type(other) is type(self) and other._node is self._node
+  
+    def __ne__(self, other):
+      """Return True if other does not represent the same location."""
+      return not (self == other)  # opposite of eq
+
+  #------------------------------- utility method -------------------------------
+  def _validate(self, p):
+    """Return position s node, or raise appropriate error if invalid."""
+    if not isinstance(p, self.Position):
+      raise TypeError('p must be proper Position type')
+    if p._container is not self:
+      raise ValueError('p does not belong to this container')
+    if p._node._next is None: # convention for deprecated nodes
+      raise ValueError('p is no longer valid')
+    return p._node
+    
+  def _make_position(self, node):
+    """Return Position instance for given node (or None if sentinel)."""
+    if node is self._header or node is self._trailer:
+      return None                       # boundary violation
+    else:
+      return self.Position(self, node)  # legitimate position
+      
+#------------------------------- accessors -------------------------------
+  def first(self):
+    """Return the first Position in the list (or None if list is empty)."""
+    return self._make_position(self._header._next)
+
+  def last(self):
+    """Return the last Position in the list (or None if list is empty)."""
+    return self._make_position(self._trailer._prev)
+
+  def before(self, p):
+    """Return the Position just before Position p (or None if p is first)."""
+    node = self._validate(p)
+    return self._make_position(node._prev)
+
+  def after(self, p):
+    """Return the Position just after Position p (or None if p is last)."""
+    node = self._validate(p)
+    return self._make_position(node._next)
+
+  def __iter__(self):
+    """Generate a forward iteration of the elements of the list."""
+    cursor = self.first()
+    while cursor is not None:
+      yield cursor.element()
+      cursor = self.after(cursor)
+      
+  #------------------------------- mutators -------------------------------
+
+  # override inherited version to return Position, rather than Node
+  def _insert_between(self, e, predecessor, successor):
+    """Add element between existing nodes and return new Position."""
+    node = super()._insert_between(e, predecessor, successor)
+    return self._make_position(node)
+
+  def add_first(self, e):
+    """Insert element e at the front of the list and return new Position."""
+    return self._insert_between(e, self._header, self._header._next)
+
+  def add_last(self, e):
+    """Insert element e at the back of the list and return new Position."""
+    return self._insert_between(e, self._trailer._prev, self._trailer)
+
+  def add_before(self, p, e):
+    """Insert element e into list before Position p and return new Position."""
+    original = self._validate(p)
+    return self._insert_between(e, original._prev, original)
+
+  def add_after(self, p, e):
+    """Insert element e into list after Position p and return new Position."""
+    original = self._validate(p)
+    return self._insert_between(e, original, original._next)
+
+  def delete(self, p):
+    """Remove and return the element at Position p."""
+    original = self._validate(p)
+    return self._delete_node(original)  # inherited method returns element
+
+  def replace(self, p, e):
+    """Replace the element at Position p with e.
+    Return the element formerly at Position p."""
+    original = self._validate(p)
+    old_value = original._element # temporarily store old element
+    original._element = e         # replace with new element
+    return old_value              # return the old element value
+```
+
+```{python, eval=FALSE}
+L = PositionalList()
+p = L.add_last(8)
+print(L.first().element())
+q = L.add_after(p, 5)
+print(L.before(q).element())
+r = L.add_before(q, 3)
+print(r.element())
+print(L.after(p).element())
+print(L.before(p).element()) # AttributeError
+s = L.add_first(9)
+print(L.delete(L.last()))
+print(L.replace(p, 7))
+```
+
+## Validating Positions
+
+- Each time a method of the PositionalList class accepts a position as a parameter, we want to verify that the position is valid, and if so, to determine the underlying node associated with the position. 
+- This functionality is implemented by a non-public method named ``_validate``. 
+- Internally, a position maintains a reference to the associated node of the linked list, and also a reference to the list instance that contains the specified node. 
+- With the container reference, we can robustly detect when a caller sends a position instance that does not belong to the indicated list.
+- We are also able to detect a position instance that belongs to the list, but that refers to a node that is no longer part of that list. 
+- Recall that the delete node of the base class sets the previous and next references of a deleted node to None; we can recognize that condition to detect a deprecated node.
+
+## Access and Update Methods
+
+- All the access and update methods trivially adapt the underlying doubly linked list implementation to support the public interface of the positional list ADT. 
+- Those methods rely on the ``_validate`` utility to **“unwrap”** any position that is sent. 
+- They also rely on a ``_make_position`` utility to **“wrap”** nodes as Position instances to return to the user, making sure never to return a position referencing a sentinel. 
+- For convenience, we have overridden the inherited insert between utility method so that ours returns a position associated with the newly created node (whereas the inherited version returns the node itself).
+
+## Sorting a Positional List [1/2]
+
+![](./Chapter07-figure/positional_list_sorting_representation.png)
+
+- We maintain a variable named ``marker`` that represents the rightmost position of the currently sorted portion of a list. - During each pass, we consider the position just past the marker as the ``pivot`` and consider where the pivot’s element belongs relative to the sorted portion
+- We use another variable, named ``walk``, to move leftward from the marker, as long as there remains a preceding element with value larger than the pivot’s.
+
+## Sorting a Positional List [2/2]
+
+```{python, eval=FALSE}
+def insertion_sort(L):
+  """Sort PositionalList of comparable elements into nondecreasing order."""
+  if len(L) > 1:                    # otherwise, no need to sort it
+    marker = L.first()
+    while marker != L.last():
+      pivot = L.after(marker)       # next item to place
+      value = pivot.element()
+      if value > marker.element():  # pivot is already sorted
+        marker = pivot              # pivot becomes new marker
+      else:                         # must relocate pivot
+        walk = marker               # find leftmost item greater than value
+        while walk != L.first() and L.before(walk).element() > value:
+          walk = L.before(walk)
+        L.delete(pivot)
+        L.add_before(walk, value)   # reinsert value before walk
+```
+
+```{python, eval=FALSE}
+insertion_sort(L)
+print(L.first().element())
+print(L.last().element())
+```
+
+## Case Study: Maintaining Access Frequencies
+
+- In this section, we consider maintaining a collection of elements while keeping track of the number of times each element is accessed. 
+- Keeping such access counts allows us to know which elements are among the most popular.
+- We model this with a new **favorites list ADT** that supports the ``len`` and ``is_empty`` methods as well as the following:
+    + ``access(e)``: Access the element ``e``, incrementing its access count, and adding it to the favorites list if it is not already present.
+    + ``remove(e)``: Remove element e from the favorites list, if present.
+    + ``top(k)``: Return an iteration of the ``k`` most accessed elements.
+
+## Using the Composition Pattern [1/2]
+
+- We wish to implement a favorites list by making use of a PositionalList for storage.
+- If elements of the positional list were simply elements of the favorites list, we would be challenged to maintain access counts and to keep the proper count with the associated element as the contents of the list are reordered. 
+- We use a general object-oriented design pattern, the **composition pattern**, in which we define a single object that is composed of two or more other objects. 
+- Specifically, we define a nonpublic nested class, ``_Item``, that stores the element and its access count as a single instance. 
+We then maintain our favorites list as a ``PositionalList`` of item instances, so that the access count for a user’s element is embedded alongside it in our representation.
+
+## Using the Composition Pattern [2/2]
+
+```{python, eval=FALSE}
+class FavoritesList:
+  """List of elements ordered from most frequently accessed to least."""
+
+  #------------------------------ nested Item class ------------------------------
+  class _Item:
+    slots = '_value' , '_count' # streamline memory usage
+
+    def __init__(self, e):
+      self._value = e # the user's element
+      self._count = 0 # access count initially zero
+
+  #----------------------------- nonpublic utilities -----------------------------
+  def _find_position(self, e):
+    """Search for element e and return its Position (or None if not found)."""
+    walk = self._data.first()
+    while walk is not None and walk.element()._value != e:
+      walk = self._data.after(walk)
+    
+    return walk
+
+  def _move_up(self, p):
+    """Move item at Position p earlier in the list based on access count."""
+    if p != self._data.first():  # consider moving...
+      cnt = p.element()._count
+      walk = self._data.before(p)
+      
+      if cnt > walk.element()._count:  # must shift forward
+        while (walk != self._data.first() and cnt > self._data.before(walk).element()._count):
+          walk = self._data.before(walk)
+        
+        self._data.add_before(walk, self._data.delete(p)) # delete/reinsert
+
+  #------------------------------- public methods -------------------------------
+  def __init__(self):
+    """Create an empty list of favorites."""
+    self._data = PositionalList()  # will be list of Item instances
+    
+  def __len__(self):
+    '''Return number of entries on favorites list.'''
+    return len(self._data)
+
+  def is_empty(self):
+    '''Return True if list is empty.'''
+    return len(self._data) == 0
+
+  def access(self, e):
+    '''Access element e, thereby increasing its access count.'''
+    p = self._find_position(e)  # try to locate existing element
+    
+    if p is None:
+      p = self._data.add_last(self._Item(e)) # if new, place at end
+    
+    p.element()._count += 1 # always increment count
+    self._move_up(p)        # consider moving forward
+    
+  def remove(self, e):
+    """Remove element e from the list of favorites."""
+    p = self._find_position(e)  # try to locate existing element
+
+    if p is not None:
+      self._data.delete(p)      # delete, if found
+
+  def top(self, k):
+    """Generate sequence of top k elements in terms of access count."""
+    if not 1 <= k <= len(self):
+      raise ValueError('Illegal value for k')
+
+    walk = self._data.first()
+    for j in range(k):
+      item = walk.element() # element of list is Item
+      yield item._value     # report user’s element
+      walk = self._data.after(walk)
+```
+
+```{python, eval=FALSE}
+FL = FavoritesList()
+
+FL.access('A')
+FL.access('B')
+FL.access('A')
+FL.access('C')
+FL.access('B')
+FL.access('C')
+FL.access('B')
+FL.access('B')
+
+for e in FL.top(3):
+  print(e)
+```
+
+## Using a List with the Move-to-Front Heuristic
+
+- In many real-life access sequences (e.g., Web pages visited by a user), once an element is accessed it is more likely to be accessed again in the near future. 
+- Such scenarios are said to possess **locality of reference**.
+- A heuristic, or rule of thumb, that attempts to take advantage of the locality of reference that is present in an access sequence is the **move-to-front heuristic**. 
+- To apply this heuristic, each time we access an element we move it all the way to the front of the list. 
+- Our hope, of course, is that this element will be accessed again in the near future.
+
+## The Trade-Offs with the Move-to-Front Heuristic
+
+- If we no longer maintain the elements of the favorites list ordered by their access counts, when we are asked to find the ``k`` most accessed elements, we need to search for them. 
+- We will implement the ``top(k)`` method as follows:
+    + We copy all entries of our favorites list into another list, named ``temp``.
+    + We scan the ``temp`` list ``k`` times. In each scan, we find the entry with the largest access count, remove this entry from ``temp``, and report it in the results.
+
+## Implementing the Move-to-Front Heuristic in Python [1/2]
+
+- The new ``FavoritesListMTF`` class inherits most of its functionality from the original FavoritesList as a base class.
+- By our original design, the access method of the original class relies on a non-public utility named ``_move_up`` to enact the potential shifting of an element forward in the list, after its access count had been incremented. 
+- Therefore, we implement the move-to-front heuristic by simply overriding the ``_move_up`` method so that each accessed element is moved directly to the front of the list (if not already there). 
+- This action is easily implemented by means of the positional list ADT.
+
+## Implementing the Move-to-Front Heuristic in Python [2/2]
+
+```{python, eval=FALSE}
+class FavoritesListMTF(FavoritesList):
+  """List of elements ordered with move-to-front heuristic."""
+  
+  # we override move up to provide move-to-front semantics
+  def _move_up(self, p):
+    """Move accessed item at Position p to front of list."""
+    if p != self._data.first():
+      self._data.add_first(self._data.delete(p))  # delete/reinsert
+
+  # we override top because list is no longer sorted
+  def top(self, k):
+    """Generate sequence of top k elements in terms of access count."""
+    if not 1 <= k <= len(self):
+      raise ValueError('Illegal value for k')
+
+    # we begin by making a copy of the original list
+    temp = PositionalList()
+    for item in self._data: # positional lists support iteration
+      temp.add_last(item)
+
+    # we repeatedly find, report, and remove element with largest count
+    for j in range(k):
+      # find and report next highest from temp
+      highPos = temp.first()
+      walk = temp.after(highPos)
+      
+      while walk is not None:
+        if walk.element()._count > highPos.element()._count:
+          highPos = walk
+        walk = temp.after(walk)
+      
+      # we have found the element with highest count
+      yield highPos.element()._value # report element to user
+      temp.delete(highPos)  # remove from temp list
+```
+
+```{python, eval=FALSE}
+FL = FavoritesListMTF()
+
+FL.access('A')
+FL.access('B')
+FL.access('A')
+FL.access('C')
+FL.access('B')
+FL.access('C')
+FL.access('B')
+FL.access('B')
+
+for e in FL.top(3):
+  print(e)
+```
+
