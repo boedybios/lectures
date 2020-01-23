@@ -13364,7 +13364,6 @@ The random variable x is sometimes called a raw score and represents values in a
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Using-the-Standard-Normal-Table-[solution]">Using the Standard Normal Table [solution]<a class="anchor-link" href="#Using-the-Standard-Normal-Table-[solution]">&#182;</a></h3><ul>
 <li>Cumulative area that corresponds to a $z$-score of $1.15$</li>
-<li><a href="https://www.calculator.net/z-score-calculator.html">$z$-score calculator</a></li>
 </ul>
 <p><img src="./image/5_1_example_table_z_1_15.png" alt="">
 <img src="./image/5_1_example_graph_z_1_15.png" alt=""></p>
@@ -13375,15 +13374,116 @@ The random variable x is sometimes called a raw score and represents values in a
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Using-$z$-score-calculator-[solution]">Using $z$-score calculator [solution]<a class="anchor-link" href="#Using-$z$-score-calculator-[solution]">&#182;</a></h3><ul>
+<li>Cumulative area that corresponds to a $z$-score of $1.15$</li>
+<li><a href="https://www.calculator.net/z-score-calculator.html">$z$-score calculator</a></li>
+</ul>
+<p><img src="./image/5_1_example_graph_z_1_15.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Using-scipy-[solution]">Using scipy [solution]<a class="anchor-link" href="#Using-scipy-[solution]">&#182;</a></h3><ul>
+<li>Cumulative area that corresponds to a $z$-score of $1.15$</li>
+</ul>
+<p><img src="./image/5_1_example_graph_z_1_15.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mf">1.15</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[1]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.8749280643628496</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Using-the-Standard-Normal-Table-[solution]">Using the Standard Normal Table [solution]<a class="anchor-link" href="#Using-the-Standard-Normal-Table-[solution]">&#182;</a></h3><ul>
 <li>Cumulative area that corresponds to a $z$-score of $-0.24$</li>
-<li><a href="https://www.calculator.net/z-score-calculator.html">$z$-score calculator</a></li>
 </ul>
 <p><img src="./image/5_1_example_table_z_0_24.png" alt="">
 <img src="./image/5_1_example_graph_z_0_24.png" alt=""></p>
 
 </div>
 </div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Using-scipy-[solution]">Using scipy [solution]<a class="anchor-link" href="#Using-scipy-[solution]">&#182;</a></h3><ul>
+<li>Cumulative area that corresponds to a $z$-score of $-0.24$</li>
+</ul>
+<p><img src="./image/5_1_example_graph_z_0_24.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="o">-</span><span class="mf">0.24</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.40516512830220414</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13431,6 +13531,40 @@ Then subtract the smaller area from the larger area.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="o">-</span><span class="mf">0.99</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.1610870595108309</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13450,6 +13584,40 @@ $Area = 1 - 0.8554 = 0.1446$</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mf">1.06</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.1445722996639096</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13469,7 +13637,41 @@ $Area = 0.8944 - 0.0668 = 0.8276$</p>
 
 </div>
 </div>
-</div></section><section>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mf">1.25</span><span class="p">)</span> <span class="o">-</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.8275430250642866</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13506,7 +13708,7 @@ $Area = 0.8944 - 0.0668 = 0.8276$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Finding-Probabilities-for-Normal-Distributions-[solution]">Finding Probabilities for Normal Distributions [solution]<a class="anchor-link" href="#Finding-Probabilities-for-Normal-Distributions-[solution]">&#182;</a></h3><p><img src="./image/5_1_example_graph_age_of_cellphone.png" alt=""></p>
+<h3 id="Finding-Probabilities-for-Normal-Distributions-[solution]">Finding Probabilities for Normal Distributions [solution]<a class="anchor-link" href="#Finding-Probabilities-for-Normal-Distributions-[solution]">&#182;</a></h3><p><img src="./image/5_2_example_graph_age_of_cellphone.png" alt=""></p>
 <ul>
 <li>The figure shows a normal curve with $\mu = 1.5$, $\sigma = 0.25$, and the shaded area for $x$ less than $1$.</li>
 <li>The $z$-score that corresponds to $1$ year is $z = \frac{x - \mu}{\sigma} = \frac{1 - 1.5}{0.25} = -2$</li>
@@ -13516,6 +13718,40 @@ $Area = 0.8944 - 0.0668 = 0.8276$</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.022750131948179195</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13552,7 +13788,7 @@ $Area = 0.8944 - 0.0668 = 0.8276$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Finding-Probabilities-for-Normal-Distributions-[solution]">Finding Probabilities for Normal Distributions [solution]<a class="anchor-link" href="#Finding-Probabilities-for-Normal-Distributions-[solution]">&#182;</a></h3><p><img src="./image/5_1_example_supermarket_shopper_a.png" alt=""></p>
+<h3 id="Finding-Probabilities-for-Normal-Distributions-[solution]">Finding Probabilities for Normal Distributions [solution]<a class="anchor-link" href="#Finding-Probabilities-for-Normal-Distributions-[solution]">&#182;</a></h3><p><img src="./image/5_2_example_supermarket_shopper_a.png" alt=""></p>
 <ul>
 <li>The figure shows a normal curve with $\mu = 45$ minutes and $\sigma = 12$ minutes. </li>
 <li>The area for $x$ between $24$ and $54$ minutes is shaded.</li>
@@ -13561,19 +13797,51 @@ $Area = 0.8944 - 0.0668 = 0.8276$</p>
 <li>$z_{2} = \frac{54 - 45}{12} = 0.75$</li>
 </ul>
 </li>
-<li>The probability that a shopper will be in the store between $24$ and $54$ minutes is:
+<li>The probability that a shopper will be in the store between $24$ and $54$ minutes is:</li>
+</ul>
 $$ 
 \begin{aligned}
-P(24 &lt; x &lt; 54)  &amp;= P(-1.75 &lt; z &lt; 0.75) \
-<pre><code>          &amp;= P(z &lt; 0.75) - P(z &lt; -1.75) \\
-          &amp;= 0.7734 - 0.0401 = 0.7333
-</code></pre>
+P(24 &lt; x &lt; 54)  &amp;= P(-1.75 &lt; z &lt; 0.75) \\
+                &amp;= P(z &lt; 0.75) - P(z &lt; -1.75) \\
+                &amp;= 0.7734 - 0.0401 = 0.7333
 \end{aligned}
-$$</li>
-</ul>
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span> <span class="o">-</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="o">-</span><span class="mf">1.75</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.7333134907593146</pre>
+</div>
+
+</div>
 
 </div>
 </div>
+
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13586,10 +13854,666 @@ $$</li>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Finding-Probabilities-for-Normal-Distributions-[solution]">Finding Probabilities for Normal Distributions [solution]<a class="anchor-link" href="#Finding-Probabilities-for-Normal-Distributions-[solution]">&#182;</a></h3><p><img src="./image/5_1_example_supermarket_shopper_b.png" alt=""></p>
+<h3 id="Finding-Probabilities-for-Normal-Distributions-[solution]">Finding Probabilities for Normal Distributions [solution]<a class="anchor-link" href="#Finding-Probabilities-for-Normal-Distributions-[solution]">&#182;</a></h3><p><img src="./image/5_2_example_supermarket_shopper_b.png" alt=""></p>
+<ul>
+<li>The figure at the left shows a normal curve with $\mu = 45$ minutes and $\sigma = 12$ minutes. </li>
+<li>The area for $x$ greater than $39$ minutes is shaded. </li>
+<li>The $z$-score that corresponds to $39$ minutes is: $z = \frac{39 - 45}{12} = -0.5$</li>
+<li>The probability that a shopper will be in the store more than $39$ minutes is:</li>
+</ul>
+$$ 
+\begin{aligned}
+P(x &gt; 39) &amp;= P(z &gt; -0.5) \\
+          &amp;= 1 - P(z &lt; -0.5) \\
+          &amp;= 1 - 0.3085 = 0.6915
+\end{aligned}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.6914624612740131</pre>
+</div>
+
+</div>
 
 </div>
 </div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-Probabilities-for-Normal-Distributions-[solution]">Finding Probabilities for Normal Distributions [solution]<a class="anchor-link" href="#Finding-Probabilities-for-Normal-Distributions-[solution]">&#182;</a></h3><h4 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">&#182;</a></h4><p>When $200$ shoppers enter the store, you would expect $200 \times 0.6915 = 138.3$, or about $138$, shoppers to be in the store more than $39$ minutes.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.3-Normal-Distributions:-Finding-Values">5.3 <br />Normal Distributions: Finding Values<a class="anchor-link" href="#5.3-Normal-Distributions:-Finding-Values">&#182;</a></h2>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-$z$-Scores">Finding $z$-Scores<a class="anchor-link" href="#Finding-$z$-Scores">&#182;</a></h3><ul>
+<li>We were given a normally distributed random variable $x$ and we found the probability that $x$ would lie in an interval by calculating the area under the normal curve for the interval.</li>
+<li>But what if you are given a probability and want to find a value?</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-$z$-Score-Given-an-Area-[example]">Finding a $z$-Score Given an Area [example]<a class="anchor-link" href="#Finding-a-$z$-Score-Given-an-Area-[example]">&#182;</a></h3><ol>
+<li>Find the $z$-score that corresponds to a cumulative area of $0.3632$.</li>
+<li>Find the $z$-score that has $10.75\%$ of the distribution’s area to its right.</li>
+</ol>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-$z$-Score-Given-an-Area-using-the-Standard-Normal-Table-[solution]">Finding a $z$-Score Given an Area using the Standard Normal Table [solution]<a class="anchor-link" href="#Finding-a-$z$-Score-Given-an-Area-using-the-Standard-Normal-Table-[solution]">&#182;</a></h3><p>Q1. Find the $z$-score that corresponds to a cumulative area of $0.3632$.</p>
+<p><img src="./image/5_3_example_table_given_an_area_a.png" alt=""></p>
+<ul>
+<li>Find the $z$-score that corresponds to an area of $0.3632$ by locating $0.3632$ in the Standard Normal Table. </li>
+<li>The values at the beginning of the corresponding row and at the top of the corresponding column give the $z$-score. </li>
+<li>For this area, the row value is $-0.3$ and the column value is $0.05$. </li>
+<li>The $z$-score is $-0.35$, as shown in the figure.</li>
+</ul>
+<p><img src="./image/5_3_example_graph_given_an_area_a.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-$z$-Score-Given-an-Area-[solution]">Finding a $z$-Score Given an Area [solution]<a class="anchor-link" href="#Finding-a-$z$-Score-Given-an-Area-[solution]">&#182;</a></h3><p>Q1. Find the $z$-score that corresponds to a cumulative area of $0.3632$.</p>
+<ul>
+<li><a href="https://www.calculator.net/z-score-calculator.html">$z$-score calculator</a></li>
+</ul>
+<p><img src="./image/5_3_example_graph_given_an_area_a.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-$z$-Score-Given-an-Area-using-scipy-[solution]">Finding a $z$-Score Given an Area using scipy [solution]<a class="anchor-link" href="#Finding-a-$z$-Score-Given-an-Area-using-scipy-[solution]">&#182;</a></h3><p>Q1. Find the $z$-score that corresponds to a cumulative area of $0.3632$.</p>
+<p><img src="./image/5_3_example_graph_given_an_area_a.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.3632</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>-0.34991831705262144</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-$z$-Score-Given-an-Area-[solution]">Finding a $z$-Score Given an Area [solution]<a class="anchor-link" href="#Finding-a-$z$-Score-Given-an-Area-[solution]">&#182;</a></h3><p>Q2. Find the $z$-score that has $10.75\%$ of the distribution’s area to its right.</p>
+<p><img src="./image/5_3_example_table_given_an_area_b.png" alt=""></p>
+<ul>
+<li><a href="https://www.calculator.net/z-score-calculator.html">$z$-score calculator</a></li>
+<li>Because the area to the right is $10.75\%$, the cumulative area is $1 - 0.1075 = 0.8925$. </li>
+<li>Find the $z$-score that corresponds to an area of $0.8925$ by locating $0.8925$ in the Standard Normal Table. </li>
+<li>For this area, the row value is $1.2$ and the column value is $0.04$. </li>
+<li>The $z$-score is $1.24$, as shown in the figure.</li>
+</ul>
+<p><img src="./image/5_3_example_graph_given_an_area_b.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-$z$-Score-Given-an-Area-using-scipy-[solution]">Finding a $z$-Score Given an Area using scipy [solution]<a class="anchor-link" href="#Finding-a-$z$-Score-Given-an-Area-using-scipy-[solution]">&#182;</a></h3><p>Q2. Find the $z$-score that has $10.75\%$ of the distribution’s area to its right.</p>
+<p><img src="./image/5_3_example_graph_given_an_area_b.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mf">10.75</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1.2399334778907378</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-$z$-Score-Given-a-Percentile-[example]">Finding a $z$-Score Given a Percentile [example]<a class="anchor-link" href="#Finding-a-$z$-Score-Given-a-Percentile-[example]">&#182;</a></h3><p>Find the $z$-score that corresponds to each percentile:</p>
+<ol>
+<li>$P_{5}$         </li>
+<li>$P_{50}$         </li>
+<li>$P_{90}$</li>
+</ol>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-$z$-Score-Given-a-Percentile-[solution]">Finding a $z$-Score Given a Percentile [solution]<a class="anchor-link" href="#Finding-a-$z$-Score-Given-a-Percentile-[solution]">&#182;</a></h3><p>Q1. $P_{5}$</p>
+<ul>
+<li><a href="https://www.calculator.net/z-score-calculator.html">$z$-score calculator</a></li>
+<li>To find the $z$-score that corresponds to $P_{5}$ , find the $z$-score that corresponds to an area of $0.05$ (see the figure) by locating $0.05$ in the Standard Normal Table. </li>
+<li>The areas closest to $0.05$ in the table are $0.0495$ $(z = -1.65)$ and $0.0505$ $(z = -1.64)$. </li>
+<li>Because $0.05$ is halfway between the two areas in the table, use the $z$-score that is halfway between $-1.64$ and $-1.65$. </li>
+<li>The $z$-score that corresponds to an area of $0.05$ is $-1.645$.</li>
+</ul>
+<p><img src="./image/5_3_example_graph_z_score_percentile_a.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-$z$-Score-Given-a-Percentile-using-scipy-[solution]">Finding a $z$-Score Given a Percentile using scipy [solution]<a class="anchor-link" href="#Finding-a-$z$-Score-Given-a-Percentile-using-scipy-[solution]">&#182;</a></h3><p>Q1. $P_{5}$</p>
+<p><img src="./image/5_3_example_graph_z_score_percentile_a.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>-1.6448536269514729</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-$z$-Score-Given-a-Percentile-[solution]">Finding a $z$-Score Given a Percentile [solution]<a class="anchor-link" href="#Finding-a-$z$-Score-Given-a-Percentile-[solution]">&#182;</a></h3><p>Q2. $P_{50}$</p>
+<ul>
+<li><a href="https://www.calculator.net/z-score-calculator.html">$z$-score calculator</a></li>
+<li>To find the $z$-score that corresponds to $P_{50}$ , find the $z$-score that corresponds to an area of $0.5$ (see the figure) by locating $0.5$ in the Standard Normal Table. </li>
+<li>The area closest to $0.5$ in the table is $0.5000$, so the $z$-score that corresponds to an area of $0.5$ is $0$.</li>
+</ul>
+<p><img src="./image/5_3_example_graph_z_score_percentile_b.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-$z$-Score-Given-a-Percentile-using-scipy-[solution]">Finding a $z$-Score Given a Percentile using scipy [solution]<a class="anchor-link" href="#Finding-a-$z$-Score-Given-a-Percentile-using-scipy-[solution]">&#182;</a></h3><p>Q2. $P_{50}$</p>
+<p><img src="./image/5_3_example_graph_z_score_percentile_b.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">50</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-$z$-Score-Given-a-Percentile-[solution]">Finding a $z$-Score Given a Percentile [solution]<a class="anchor-link" href="#Finding-a-$z$-Score-Given-a-Percentile-[solution]">&#182;</a></h3><p>Q3. $P_{90}$</p>
+<ul>
+<li><a href="https://www.calculator.net/z-score-calculator.html">$z$-score calculator</a></li>
+<li>To find the $z$-score that corresponds to $P_{90}$ , find the $z$-score that corresponds to an area of $0.9$ (see the figure) by locating $0.9$ in the Standard Normal Table. </li>
+<li>The area closest to $0.9$ in the table is $0.8997$</li>
+<li>The $z$-score that corresponds to an area of $0.9$ is about $1.28$.</li>
+</ul>
+<p><img src="./image/5_3_example_graph_z_score_percentile_c.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-$z$-Score-Given-a-Percentile-using-scipy-[solution]">Finding a $z$-Score Given a Percentile using scipy [solution]<a class="anchor-link" href="#Finding-a-$z$-Score-Given-a-Percentile-using-scipy-[solution]">&#182;</a></h3><p>Q3. $P_{90}$</p>
+<p><img src="./image/5_3_example_graph_z_score_percentile_c.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">90</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1.2815515655446004</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Transforming-a-$z$-Score-to-an-$x$-Value">Transforming a $z$-Score to an $x$-Value<a class="anchor-link" href="#Transforming-a-$z$-Score-to-an-$x$-Value">&#182;</a></h3>$$ 
+\begin{aligned}
+z &amp;= \frac{x - \mu}{\sigma} \\
+z \sigma &amp;= x - \mu \\
+\mu + z \sigma &amp;= x \\
+x &amp;= \mu + z \sigma
+\end{aligned}
+$$
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-an-$x$-Value-Corresponding-to-a-$z$-Score-[example]">Finding an $x$-Value Corresponding to a $z$-Score [example]<a class="anchor-link" href="#Finding-an-$x$-Value-Corresponding-to-a-$z$-Score-[example]">&#182;</a></h3><ul>
+<li>A veterinarian records the weights of cats treated at a clinic. </li>
+<li>The weights are normally distributed, with a mean of $9$ pounds and a standard deviation of $2$ pounds. </li>
+<li>Find the weights $x$ corresponding to $z$-scores of $1.96$, $-0.44$, and $0$.</li>
+<li>Interpret your results.</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-an-$x$-Value-Corresponding-to-a-$z$-Score-[solution]">Finding an $x$-Value Corresponding to a $z$-Score [solution]<a class="anchor-link" href="#Finding-an-$x$-Value-Corresponding-to-a-$z$-Score-[solution]">&#182;</a></h3><ul>
+<li>The $x$-value that corresponds to each standard $z$-score is calculated using the formula $x = \mu + z \sigma$. </li>
+<li>Note that $\mu = 9$ and $\sigma = 2$.</li>
+</ul>
+$$ 
+\begin{aligned}
+z = 1.96 &amp;: x = 9 + 1.96 \times 2 = 12.92 \\
+z = -0.44 &amp;: x = 9 + (-0.44) \times 2 = 8.12 \\
+z = 0 &amp;: x = 9 + 0 \times 2 = 9 \\
+\end{aligned}
+$$
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-an-$x$-Value-Corresponding-to-a-$z$-Score-[solution]">Finding an $x$-Value Corresponding to a $z$-Score [solution]<a class="anchor-link" href="#Finding-an-$x$-Value-Corresponding-to-a-$z$-Score-[solution]">&#182;</a></h3><h4 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">&#182;</a></h4><p>You can see that $12.92$ pounds is above the mean, $8.12$ pounds is below the mean, and $9$ pounds is equal to the mean.</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-Specific-Data-Value-for-a-Given-Probability">Finding a Specific Data Value for a Given Probability<a class="anchor-link" href="#Finding-a-Specific-Data-Value-for-a-Given-Probability">&#182;</a></h3><p>We can also use the normal distribution to find a specific data value ($x$-value) for a given probability</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-Specific-Data-Value-[example]">Finding a Specific Data Value [example]<a class="anchor-link" href="#Finding-a-Specific-Data-Value-[example]">&#182;</a></h3><ul>
+<li>Scores for the California Peace Officer Standards and Training test are normally distributed, with a mean of $50$ and a standard deviation of $10$. </li>
+<li>An agency will only hire applicants with scores in the top $10\%$. </li>
+<li>What is the lowest score an applicant can earn and still be eligible to be hired by the agency?</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-Specific-Data-Value-[solution]">Finding a Specific Data Value [solution]<a class="anchor-link" href="#Finding-a-Specific-Data-Value-[solution]">&#182;</a></h3><ul>
+<li>Exam scores in the top $10\%$ correspond to the shaded region shown.</li>
+</ul>
+<p><img src="./image/5_3_california_peace_officer_score_graph.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-Specific-Data-Value-[solution]">Finding a Specific Data Value [solution]<a class="anchor-link" href="#Finding-a-Specific-Data-Value-[solution]">&#182;</a></h3><ul>
+<li>A test score in the top $10\%$ is any score above the $90^{th}$ percentile. </li>
+<li>To find the score that represents the $90^{th}$ percentile, you must first find the $z$-score that corresponds to a cumulative area of $0.9$. </li>
+<li>In the Standard Normal Table, the area closest to $0.9$ is $0.8997$.</li>
+<li>The $z$-score that corresponds to an area of $0.9$ is $z = 1.28$.</li>
+<li><a href="https://www.calculator.net/z-score-calculator.html">$z$-score calculator</a></li>
+<li>To find the $x$-value, note that $\mu = 50$ and $\sigma = 10$, and use the formula $x = \mu + z \sigma = 50 + 1.28 \times 10 = 62.8$</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">std</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">90</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">+</span> <span class="n">z</span> <span class="o">*</span> <span class="n">std</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;z-score: </span><span class="si">{z}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> x: </span><span class="si">{x}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>z-score: 1.2815515655446004 	 x: 62.815515655446006
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-Specific-Data-Value-[solution]">Finding a Specific Data Value [solution]<a class="anchor-link" href="#Finding-a-Specific-Data-Value-[solution]">&#182;</a></h3><h4 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">&#182;</a></h4><p>The lowest score an applicant can earn and still be eligible to be hired by the agency is about $63$.</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-Specific-Data-Value-[example]">Finding a Specific Data Value [example]<a class="anchor-link" href="#Finding-a-Specific-Data-Value-[example]">&#182;</a></h3><ul>
+<li>In a randomly selected sample of women ages $20 – 34$, the mean total cholesterol level is $181$ milligrams per deciliter with a standard deviation of $37.6$ milligrams per deciliter. </li>
+<li>Assume the total cholesterol levels are normally distributed.</li>
+<li>Find the highest total cholesterol level a woman in this $20 – 34$ age group can have and still be in the bottom $1\%$.</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-Specific-Data-Value-[solution]">Finding a Specific Data Value [solution]<a class="anchor-link" href="#Finding-a-Specific-Data-Value-[solution]">&#182;</a></h3><ul>
+<li>Total cholesterol levels in the lowest $1\%$ correspond to the shaded region shown.</li>
+</ul>
+<p><img src="./image/5_3_cholesterol_levels_in_women_graph.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-Specific-Data-Value-[solution]">Finding a Specific Data Value [solution]<a class="anchor-link" href="#Finding-a-Specific-Data-Value-[solution]">&#182;</a></h3><ul>
+<li>A total cholesterol level in the lowest $1\%$ is any level below the $1^{st}$ percentile.</li>
+<li>To find the level that represents the $1^{st}$ percentile, we must first find the $z$-score that corresponds to a cumulative area of $0.01$. </li>
+<li>In the Standard Normal Table, the area closest to $0.01$ is $0.0099$. </li>
+<li>The $z$-score that corresponds to an area of $0.01$ is $z = -2.33$. </li>
+<li>To find the $x$-value, note that $\mu = 181$ and $\sigma = 37.6$, and use the formula $x = \mu + z \times \sigma = 181 + (-2.33) \times 37.6 = 93.39$.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="mi">181</span>
+<span class="n">std</span> <span class="o">=</span> <span class="mf">37.6</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">+</span> <span class="n">z</span> <span class="o">*</span> <span class="n">std</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;z-score: </span><span class="si">{z}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> x: </span><span class="si">{x}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>z-score: -2.3263478740408408 	 x: 93.52931993606438
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-Specific-Data-Value-[solution]">Finding a Specific Data Value [solution]<a class="anchor-link" href="#Finding-a-Specific-Data-Value-[solution]">&#182;</a></h3><h4 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">&#182;</a></h4><p>The value that separates the lowest $1\%$ of total cholesterol levels for women in the $20–34$ age group from the highest $99\%$ is about $93$ milligrams per deciliter.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.4-Sampling-Distributions-and-the-Central-Limit-Theorem">5.4 <br />Sampling Distributions and the Central Limit Theorem<a class="anchor-link" href="#5.4-Sampling-Distributions-and-the-Central-Limit-Theorem">&#182;</a></h2>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Sampling-Distributions">Sampling Distributions<a class="anchor-link" href="#Sampling-Distributions">&#182;</a></h3><ul>
+<li>In this section, you will study the relationship between a population mean and the means of samples taken from the population.</li>
+<li>A sampling distribution is the probability distribution of a sample statistic that is formed when samples of size $n$ are repeatedly taken from a population.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div></section></section>
 </div>
 </div>
