@@ -13087,7 +13087,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">notebook.services.config</span> <span class="k">import</span> <span class="n">ConfigManager</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">notebook.services.config</span> <span class="kn">import</span> <span class="n">ConfigManager</span>
 <span class="n">cm</span> <span class="o">=</span> <span class="n">ConfigManager</span><span class="p">()</span>
 <span class="n">cm</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s1">&#39;livereveal&#39;</span><span class="p">,</span> <span class="p">{</span>
         <span class="s1">&#39;scroll&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
@@ -13112,7 +13112,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;width&#39;: &#39;100%&#39;, &#39;height&#39;: &#39;100%&#39;, &#39;scroll&#39;: True}</pre>
+<pre>{&#39;scroll&#39;: True, &#39;width&#39;: &#39;100%&#39;, &#39;height&#39;: &#39;100%&#39;}</pre>
 </div>
 
 </div>
@@ -13356,18 +13356,18 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># also cover example 4</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">sqrt</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">40</span>
 <span class="n">sigma</span> <span class="o">=</span> <span class="mf">7.9</span>
 <span class="n">mu</span> <span class="o">=</span> <span class="mf">29.6</span>
 
-<span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">sigma</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">sigma</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13380,7 +13380,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -13433,11 +13433,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">sqrt</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">mu</span> <span class="o">=</span> <span class="mf">22.9</span> 
@@ -13456,7 +13456,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -13565,15 +13565,1213 @@ $d.f. = n - 1$</li>
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-Critical-Values-of-$t$-[example-1]">Finding Critical Values of $t$ [example 1]<a class="anchor-link" href="#Finding-Critical-Values-of-$t$-[example-1]">&#182;</a></h3><p>Find the critical value $t_{c}$ for a $95\%$ confidence level when the sample size is $15$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-Critical-Values-of-$t$-[solution]">Finding Critical Values of $t$ [solution]<a class="anchor-link" href="#Finding-Critical-Values-of-$t$-[solution]">&#182;</a></h3><ul>
+<li>Because $n = 15$, the degrees of freedom are $d.f. = n - 1 = 15 - 1 = 14$.</li>
+<li>Using $d.f. = 14$ and $c = 0.95$, you can find the critical value $t_{c}$ , as shown by the highlighted areas in the table.</li>
+</ul>
+<p><img src="./image/6_2_critical_values_table.png" alt=""></p>
+<ul>
+<li>From the table, you can see that $t_{c} = 2.145$. </li>
+<li>The figure below shows the $t$-distribution for $14$ degrees of freedom, $c = 0.95$, and $t_{c} = 2.145$.</li>
+</ul>
+<p><img src="./image/6_2_critical_values_graph.png" alt=""></p>
+<h5 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">&#182;</a></h5><p>For a $t$-distribution curve with $14$ degrees of freedom, $95\%$ of the area under the curve lies between $t \pm 2.145$.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">t</span>
+<span class="n">df</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">0.95</span>
+<span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">df</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2.1447866879169273</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(-2.1447866879169273, 2.1447866879169273)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Confidence-Intervals-and-$t$-Distributions">Confidence Intervals and $t$-Distributions<a class="anchor-link" href="#Confidence-Intervals-and-$t$-Distributions">&#182;</a></h3><ul>
+<li>Constructing a confidence interval for $\mu$ when $\sigma$ is not known using the $t$-distribution is similar to constructing a confidence interval for $\mu$ when $\sigma$ is known using the standard normal distribution—both use a point estimate $\bar{x}$ and a margin of error $E$. </li>
+<li>When $\sigma$ is not known, the margin of error $E$ is calculated using the sample standard deviation $s$ and the critical value $t_{c}$ . </li>
+<li>The formula for $E$ is:<ul>
+<li>$E = t_{c} \frac{s}{\sqrt{n}}$</li>
+</ul>
+</li>
+<li>Before using this formula, verify that the sample is random, and either the population is normally distributed or $n \ge 30$.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Guidelines-for-Constructing-a-Confidence-Interval-for-a-Population-Mean-($\sigma$-Unknown)">Guidelines for Constructing a Confidence Interval for a Population Mean ($\sigma$ Unknown)<a class="anchor-link" href="#Guidelines-for-Constructing-a-Confidence-Interval-for-a-Population-Mean-($\sigma$-Unknown)">&#182;</a></h3><ol>
+<li>Verify that s is not known, the sample is random, and either the population is normally distributed or $n \ge 30$.</li>
+<li>Find the sample statistics $n$, $\bar{x}$, and $s$.<ul>
+<li>$\bar{x} = \frac{\sum{x}}{n}$</li>
+<li>$s = \sqrt{\frac{\sum{(x-\bar{x})^{2}}}{n-1}}$</li>
+</ul>
+</li>
+<li>Identify the degrees of freedom, the level of confidence $c$, and the critical value $t_{c}$ <ul>
+<li>$df = n-1$</li>
+</ul>
+</li>
+<li>Find the margin of error $E$.<ul>
+<li>$E = t_{c} \frac{s}{\sqrt{n}}$</li>
+</ul>
+</li>
+<li>Find the left and right endpoints and form the confidence interval.<ul>
+<li>Left endpoint: $\bar{x} - E$</li>
+<li>Right endpoint: $\bar{x} + E$</li>
+<li>Interval: $\bar{x}-E &lt; \mu &lt;\bar{x}+E$</li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Constructing-a-Confidence-Interval-[example-2]">Constructing a Confidence Interval [example 2]<a class="anchor-link" href="#Constructing-a-Confidence-Interval-[example-2]">&#182;</a></h3><ul>
+<li>You randomly select $16$ coffee shops and measure the temperature of the coffee sold at each. </li>
+<li>The sample mean temperature is $162.0^\circ F$ with a sample standard deviation of $10.0^\circ F$. </li>
+<li>Construct a $95\%$ confidence interval for the population mean temperature of coffee sold. </li>
+<li>Assume the temperatures are approximately normally distributed.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Constructing-a-Confidence-Interval-[solution]">Constructing a Confidence Interval [solution]<a class="anchor-link" href="#Constructing-a-Confidence-Interval-[solution]">&#182;</a></h3><ul>
+<li>Because $\sigma$ is unknown, the sample is random, and the temperatures are approximately normally distributed, use the $t$-distribution. </li>
+<li><p>Using $n = 16$, $\bar{x} = 162.0$, $s = 10.0$, $c = 0.95$, and $d.f. = 15$, you can use <em>Table</em> to find that $t_{c} = 2.131$.</p>
+</li>
+<li><p>The margin of error at the 95% confidence level is:</p>
+<ul>
+<li>$E = t_{c} \frac{s}{\sqrt{n}} = 2.131 \times \frac{10.0}{\sqrt{16}} \approx 5.3$</li>
+</ul>
+</li>
+<li>The confidence interval is shown below.</li>
+</ul>
+<p><img src="./image/6_2_ex_2_confidence_interval_1.png" alt=""></p>
+<p><img src="./image/6_2_ex_2_confidence_interval_2.png" alt=""></p>
+<h5 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">&#182;</a></h5><p>With $95\%$ confidence, you can say that the population mean temperature of coffee sold is between $156.7^\circ F$ and $167.3^\circ F$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">t</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">0.95</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">sample_mean</span> <span class="o">=</span> <span class="mi">162</span>
+
+<span class="n">tc</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;tc: </span><span class="si">{tc}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">E</span> <span class="o">=</span> <span class="n">tc</span> <span class="o">*</span> <span class="n">s</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;E: </span><span class="si">{E}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Left End Point: {sample_mean - E}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Right End Point: {sample_mean + E}&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>tc: 2.131449545559323
+E: 5.328623863898308
+Left End Point: 156.67137613610169
+Right End Point: 167.32862386389831
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">sample_mean</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">s</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(156.67137613610169, 167.32862386389831)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Constructing-a-Confidence-Interval-[example-3]">Constructing a Confidence Interval [example 3]<a class="anchor-link" href="#Constructing-a-Confidence-Interval-[example-3]">&#182;</a></h3><ul>
+<li>You randomly select $36$ cars of the same model that were sold at a car dealership and determine the number of days each car sat on the dealership’s lot before it was sold. </li>
+<li>The sample mean is $9.75$ days, with a sample standard deviation of $2.39$ days. </li>
+<li>Construct a $99\%$ confidence interval for the population mean number of days the car model sits on the dealership’s lot.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Constructing-a-Confidence-Interval-[solution]">Constructing a Confidence Interval [solution]<a class="anchor-link" href="#Constructing-a-Confidence-Interval-[solution]">&#182;</a></h3><ul>
+<li>Because $\sigma$ is unknown, the sample is random, and $n \ge 30$, use the $t$-distribution. </li>
+<li>Using $n = 36$, $\bar{x} = 9.75$, $s = 2.39$, $c = 0.99$, and $d.f. = 35$, we can use Table to find that $t_{c} = 2.724$. </li>
+<li>The margin of error at the $99\%$ confidence level is:<ul>
+<li>$E = t_{c} \frac{s}{\sqrt{n}} = 2.724 \times \frac{2.39}{\sqrt{36}} \approx 1.09$</li>
+</ul>
+</li>
+<li>The confidence interval is constructed as shown.</li>
+</ul>
+<p><img src="./image/6_2_ex_3_confidence_interval.png" alt=""></p>
+<h5 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">&#182;</a></h5><p>With $99\%$ confidence, you can say that the population mean number of days the car model sits on the dealership’s lot is between $8.66$ and $10.84$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">t</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">36</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">0.99</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mf">2.39</span>
+<span class="n">sample_mean</span> <span class="o">=</span> <span class="mf">9.75</span>
+
+<span class="n">tc</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;tc: </span><span class="si">{tc}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">E</span> <span class="o">=</span> <span class="n">tc</span> <span class="o">*</span> <span class="n">s</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;E: </span><span class="si">{E}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Left End Point: {sample_mean - E}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Right End Point: {sample_mean + E}&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>tc: 2.723805589208047
+E: 1.0849825597012053
+Left End Point: 8.665017440298795
+Right End Point: 10.834982559701205
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">sample_mean</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">s</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(8.665017440298794, 10.834982559701206)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Construct-a-Confidence-Interval-for-a-Population-Mean">Construct a Confidence Interval for a Population Mean<a class="anchor-link" href="#Construct-a-Confidence-Interval-for-a-Population-Mean">&#182;</a></h3><ul>
+<li>The flowchart describes when to use the standard normal distribution and when to use the $t$-distribution to construct a confidence interval for a population mean.</li>
+</ul>
+<p><img src="./image/6_2_confidence_interval_for_a_population.png" alt=""></p>
+<ul>
+<li>Notice in the flowchart that when both $n &lt; 30$ and the population is not normally distributed, you cannot use the standard normal distribution or the $t$-distribution.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Choosing-the-Standard-Normal-Distribution-or-the-$t$-Distribution-[example-4]">Choosing the Standard Normal Distribution or the $t$-Distribution [example 4]<a class="anchor-link" href="#Choosing-the-Standard-Normal-Distribution-or-the-$t$-Distribution-[example-4]">&#182;</a></h3><ul>
+<li>You randomly select $25$ newly constructed houses. The sample mean construction cost is $\$181,000$ and the population standard deviation is $\$28,000$. </li>
+<li>Assuming construction costs are normally distributed, should you to construct a $95\%$ confidence interval for the population mean construction cost? </li>
+<li>Explain your reasoning.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Choosing-the-Standard-Normal-Distribution-or-the-$t$-Distribution-[solution]">Choosing the Standard Normal Distribution or the $t$-Distribution [solution]<a class="anchor-link" href="#Choosing-the-Standard-Normal-Distribution-or-the-$t$-Distribution-[solution]">&#182;</a></h3><ul>
+<li>Is $\sigma$ known? Yes.</li>
+<li>Is either the population normally distributed or $n \ge 30$? Yes, the population is normally distributed.</li>
+<li>Decision:Use the standard normal distribution.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.3-Confidence-Intervals-for-Population-Proportions">6.3 <br />Confidence Intervals for Population Proportions<a class="anchor-link" href="#6.3-Confidence-Intervals-for-Population-Proportions">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Point-Estimate-for-a-Population-Proportion">Point Estimate for a Population Proportion<a class="anchor-link" href="#Point-Estimate-for-a-Population-Proportion">&#182;</a></h3><ul>
+<li>The probability of success in a single trial of a binomial experiment is $p$. </li>
+<li>This probability is a population proportion. </li>
+<li>In this section, we will learn how to estimate a <strong>population proportion</strong> $p$ using a confidence interval.</li>
+<li>As with confidence intervals for $\mu$, we will start with a point estimate.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Point-Estimate-for-$p$">Point Estimate for $p$<a class="anchor-link" href="#Point-Estimate-for-$p$">&#182;</a></h3><ul>
+<li>The point estimate for $p$, the population proportion of successes, is given by the proportion of successes in a sample and is denoted by<ul>
+<li>$\hat{p} = \frac{x}{n}$</li>
+</ul>
+</li>
+<li>where $x$ is the number of successes in the sample and $n$ is the sample size.</li>
+<li>The point estimate for the population proportion of failures is $\hat{q} = 1 - \hat{p}$.</li>
+<li>The symbols $\hat{p}$ and $\hat{q}$ are read as “$p$ hat” and “$q$ hat.”</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-Point-Estimate-for-$p$-[example-1]">Finding a Point Estimate for $p$ [example 1]<a class="anchor-link" href="#Finding-a-Point-Estimate-for-$p$-[example-1]">&#182;</a></h3><ul>
+<li>In a survey of $1000$ U.S. teens, $372$ said that they own smartphones. </li>
+<li>Find a point estimate for the population proportion of U.S. teens who own smartphones.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-a-Point-Estimate-for-$p$-[solution]">Finding a Point Estimate for $p$ [solution]<a class="anchor-link" href="#Finding-a-Point-Estimate-for-$p$-[solution]">&#182;</a></h3><ul>
+<li><p>Using $n = 1000$ and $x = 372$,</p>
+<ul>
+<li>$\hat{p} = \frac{x}{n} = \frac{372}{1000} = 0.372 = 37.2\% $</li>
+</ul>
+</li>
+<li><p>The point estimate for the population proportion of U.S. teens who own smartphones is $37.2\%$.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Confidence-Intervals-for-a-Population-Proportion">Confidence Intervals for a Population Proportion<a class="anchor-link" href="#Confidence-Intervals-for-a-Population-Proportion">&#182;</a></h3><ul>
+<li>Constructing a confidence interval for a population proportion $p$ is similar to constructing a confidence interval for a population mean. </li>
+<li><p>We start with a point estimate and calculate a margin of error.</p>
+</li>
+<li><p>A $c$-confidence interval for a population proportion $p$ is:</p>
+<ul>
+<li>$\hat{p} - E &lt; p &lt; \hat{p} + E$</li>
+</ul>
+</li>
+<li><p>where margin of error for $p$ is:</p>
+<ul>
+<li>$E = z_{c} \sqrt{\frac{\hat{p}\hat{q}}{n}}$</li>
+</ul>
+</li>
+<li><p>The probability that the confidence interval contains $p$ is $c$, assuming that the estimation process is repeated a large number of times.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Guidelines-for-Constructing-a-Confidence-Interval-for-a-Population-Proportion">Guidelines for Constructing a Confidence Interval for a Population Proportion<a class="anchor-link" href="#Guidelines-for-Constructing-a-Confidence-Interval-for-a-Population-Proportion">&#182;</a></h3><ol>
+<li>Identify the sample statistics $n$ and $x$.</li>
+<li><p>Find the point estimate $\hat{p}$.</p>
+<ul>
+<li>$\hat{p} = \frac{x}{n}$</li>
+</ul>
+</li>
+<li><p>Verify that the sampling distribution of $\hat{p}$ can be approximated by a normal distribution.</p>
+<ul>
+<li>$n\hat{p} \ge 5, n \hat{q} \ge 5$</li>
+</ul>
+</li>
+<li><p>Find the critical value $z_{c}$ thatcorresponds to the given level of confidence $c$.</p>
+<ul>
+<li>We can use <code>SciPy</code></li>
+</ul>
+</li>
+<li><p>Find the margin of error $E$.</p>
+<ul>
+<li>$E = z_{c} \sqrt{\frac{\hat{p}\hat{q}}{n}}$</li>
+</ul>
+</li>
+<li><p>Find the left and right endpoints and form the confidence interval.</p>
+<ul>
+<li>Left endpoint: $\hat{p} - E$</li>
+<li>Right endpoint: $\hat{p} + E$</li>
+<li>Interval: $\hat{p} - E &lt; p &lt; \hat{p} + E$</li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Constructing-a-Confidence-Interval-for-p-[example-2]">Constructing a Confidence Interval for p [example 2]<a class="anchor-link" href="#Constructing-a-Confidence-Interval-for-p-[example-2]">&#182;</a></h3><p>Use the data in Example $1$ to construct a $95\%$ confidence interval for the population proportion of U.S. teens who own smartphones.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Constructing-a-Confidence-Interval-for-p-[solution]">Constructing a Confidence Interval for p [solution]<a class="anchor-link" href="#Constructing-a-Confidence-Interval-for-p-[solution]">&#182;</a></h3><ul>
+<li>From Example 1, $\hat{p} = 0.372$. </li>
+<li><p>The point estimate for the population proportion of failures is:</p>
+<ul>
+<li>$\hat{q} = 1 - \hat{p} = 1 - 0.372 = 0.628$</li>
+</ul>
+</li>
+<li><p>Using $n = 1000$, we can verify that the sampling distribution of $\hat{p}$ can be approximated by a normal distribution.</p>
+<ul>
+<li>$n \hat{p} = 1000 \times 0.372 = 372 &gt; 5$</li>
+<li>$n \hat{q} = 1000 \times 0.628 = 628 &gt; 5$</li>
+</ul>
+</li>
+<li><p>Using $z_{c} = 1.96$, the margin of error is:</p>
+<ul>
+<li>$E = z_{c} \sqrt{\frac{\hat{p} \hat{q}}{n}} = 1.96 \times \sqrt{\frac{0.372 \times 0.628}{1000}} \approx 0.03$</li>
+</ul>
+</li>
+<li><p>Next, find the left and right endpoints and form the $95\%$ confidence interval.
+<img src="./image/6_3_ex_2_confidence_interval.png" alt=""></p>
+</li>
+</ul>
+<h5 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">&#182;</a></h5><p>With $95\%$ confidence, you can say that the population proportion of U.S. teens who own smartphones is between $34.2\%$ and $40.2\%$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">t</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span> 
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">0.95</span>
+
+<span class="n">p_hat</span> <span class="o">=</span> <span class="mf">0.372</span>
+<span class="n">q_hat</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">p_hat</span>
+
+<span class="n">zc</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;zc: </span><span class="si">{zc}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">E</span> <span class="o">=</span> <span class="n">zc</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">p_hat</span> <span class="o">*</span> <span class="n">q_hat</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;E: </span><span class="si">{E}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Left End Point: {p_hat - E}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Right End Point: {p_hat + E}&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>zc: 1.9623414611334487
+E: 0.029993411898275826
+Left End Point: 0.3420065881017242
+Right End Point: 0.4019934118982758
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">p_hat</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">sqrt</span><span class="p">(</span><span class="n">p_hat</span> <span class="o">*</span> <span class="n">q_hat</span> <span class="o">/</span> <span class="n">n</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(0.3420065881017242, 0.4019934118982758)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Constructing-a-Confidence-Interval-for-$p$-[example-3]">Constructing a Confidence Interval for $p$ [example 3]<a class="anchor-link" href="#Constructing-a-Confidence-Interval-for-$p$-[example-3]">&#182;</a></h3><ul>
+<li>The figure shows a survey of $498$ U.S. adults.</li>
+<li>Construct a $99\%$ confidence interval for the population proportion of U.S. adults who think that teenagers are the more dangerous drivers.</li>
+</ul>
+<p><img src="./image/6_3_dangerous_drivers.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Constructing-a-Confidence-Interval-for-$p$-[solution]">Constructing a Confidence Interval for $p$ [solution]<a class="anchor-link" href="#Constructing-a-Confidence-Interval-for-$p$-[solution]">&#182;</a></h3><ul>
+<li><p>From the figure, $\hat{p} = 0.71$.</p>
+<ul>
+<li>$\hat{q} = 1 - \hat{p} = 1 - 0.71 = 0.29$.</li>
+</ul>
+</li>
+<li><p>Using these values and the values $n = 498$ and $z_{c} = 2.575$, the margin of error is:</p>
+<ul>
+<li>$E = z_{c} \sqrt{\frac{\hat{p} \hat{q}}{n}} = 2.575 \times \sqrt{\frac{0.71 \times 0.29}{498}} \approx 0.052$</li>
+</ul>
+</li>
+<li><p>Next, find the left and right endpoints and form the $99\%$ confidence interval.</p>
+</li>
+</ul>
+<p><img src="./image/6_3_ex_3_confidence_interval.png" alt=""></p>
+<h5 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">&#182;</a></h5><p>With $99\%$ confidence, you can say that the population proportion of U.S. adults who think that teenagers are the more dangerous drivers is between $65.8\%$ and $76.2\%$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">t</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span> 
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">498</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">0.99</span>
+
+<span class="n">p_hat</span> <span class="o">=</span> <span class="mf">0.71</span>
+<span class="n">q_hat</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">p_hat</span>
+
+<span class="n">zc</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;zc: </span><span class="si">{zc}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">E</span> <span class="o">=</span> <span class="n">zc</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">p_hat</span> <span class="o">*</span> <span class="n">q_hat</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;E: </span><span class="si">{E}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Left End Point: {p_hat - E}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Right End Point: {p_hat + E}&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>zc: 2.585757619531686
+E: 0.052577667429680196
+Left End Point: 0.6574223325703198
+Right End Point: 0.7625776674296801
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">p_hat</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">sqrt</span><span class="p">(</span><span class="n">p_hat</span> <span class="o">*</span> <span class="n">q_hat</span> <span class="o">/</span> <span class="n">n</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(0.6574223325703198, 0.7625776674296801)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="FInding-a-Minimum-Sample-Size">FInding a Minimum Sample Size<a class="anchor-link" href="#FInding-a-Minimum-Sample-Size">&#182;</a></h3><ul>
+<li>One way to increase the precision of a confidence interval without decreasing the level of confidence is to increase the sample size.</li>
+<li><p>Given a $c$-confidence level and a margin of error $E$, the minimum sample size $n$ needed to estimate the population proportion $p$ is:</p>
+<ul>
+<li>$n = \hat{p} \hat{q}(\frac{z_{c}}{E})^{2}$</li>
+</ul>
+</li>
+<li><p>This formula assumes that we have preliminary estimates of $\hat{p}$ and $\hat{q}$.</p>
+</li>
+<li>If not, use $\hat{p} = 0.5$ and $\hat{q} = 0.5$.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Determining-a-Minimum-Sample-Size-[example-4]">Determining a Minimum Sample Size [example 4]<a class="anchor-link" href="#Determining-a-Minimum-Sample-Size-[example-4]">&#182;</a></h3><ul>
+<li>You are running a political campaign and wish to estimate, with $95\%$ confidence, the population proportion of registered voters who will vote for your candidate.</li>
+<li>Your estimate must be accurate within $3\%$ of the population proportion. </li>
+<li>Find the minimum sample size needed when:<ul>
+<li>Q1: no preliminary estimate is available</li>
+<li>Q2: a preliminary estimate gives $\hat{p} = 0.31$</li>
+</ul>
+</li>
+<li>Compare your results.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Determining-a-Minimum-Sample-Size-[solution]">Determining a Minimum Sample Size [solution]<a class="anchor-link" href="#Determining-a-Minimum-Sample-Size-[solution]">&#182;</a></h3><h5 id="Q1:">Q1:<a class="anchor-link" href="#Q1:">&#182;</a></h5><ul>
+<li>Because we do not have a preliminary estimate of $\hat{p}$, use $\hat{p} = 0.5$ and $\hat{q} = 0.5$. </li>
+<li>Using $z_{c} = 1.96$ and $E = 0.03$, we can solve for $n$.<ul>
+<li>$n = \hat{p} \hat{q}(\frac{z_{c}}{E})^{2} = 0.5 \times 0.5 \times (\frac{1.96}{0.03})^{2} \approx 1067.11$</li>
+</ul>
+</li>
+<li>Because $n$ is a decimal, round up to the nearest whole number, $1068$.</li>
+</ul>
+<h5 id="Q2:">Q2:<a class="anchor-link" href="#Q2:">&#182;</a></h5><ul>
+<li>We have a preliminary estimate of $\hat{p} = 0.31$. <ul>
+<li>$\hat{q} = 1-\hat{p} = 1 - 0.31 = 0.69$. </li>
+</ul>
+</li>
+<li>Using $z_{c} = 1.96$ and $E = 0.03$, we can solve for $n$.<ul>
+<li>$n = \hat{p} \hat{q}(\frac{z_{c}}{E})^{2} = 0.31 \times 0.69 \times (\frac{1.96}{0.03})^{2} \approx 913.02$</li>
+</ul>
+</li>
+<li>Because $n$ is a decimal, round up to the nearest whole number, $914$.</li>
+</ul>
+<h5 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">&#182;</a></h5><ul>
+<li>With no preliminary estimate, the minimum sample size should be at least $1068$ registered voters. </li>
+<li>With a preliminary estimate of $\hat{p} = 0.31$, the sample size should be at least $914$ registered voters. </li>
+<li>So, we will need a larger sample size when no preliminary estimate is available.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.4-Confidence-Intervals-for-Variance-and-Standard-Deviation">6.4 <br />Confidence Intervals for Variance and Standard Deviation<a class="anchor-link" href="#6.4-Confidence-Intervals-for-Variance-and-Standard-Deviation">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Point-Estimate-for-Variance-and-Standard-Deviation">Point Estimate for Variance and Standard Deviation<a class="anchor-link" href="#Point-Estimate-for-Variance-and-Standard-Deviation">&#182;</a></h3><ul>
+<li>In manufacturing, it is necessary to control the amount that a process varies. </li>
+<li>For instance, an automobile part manufacturer must produce thousands of parts to be used in the manufacturing process. </li>
+<li>It is important that the parts vary little or not at all. </li>
+<li>How can you measure, and consequently control, the amount of variation in the parts? </li>
+<li>We can start with a *<em>point estimate</em>.</li>
+<li>The point estimate for $\sigma^{2}$ is $s^{2}$ and the point estimate for $\sigma$ is $s$. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-Chi-Square-Distribution">The Chi-Square Distribution<a class="anchor-link" href="#The-Chi-Square-Distribution">&#182;</a></h3><ul>
+<li>We can use a chi-square distribution to construct a confidence interval for the variance and standard deviation.</li>
+<li>If a random variable $x$ has a normal distribution, then the distribution of $x^{@}$ forms a chi-square distribution for samples of any size $n &gt; 1$.<ul>
+<li>$x^{2} = \frac{(n-1)s^{2}}{\sigma^{2}}$</li>
+</ul>
+</li>
+</ul>
+<p>Here are several properties of the chi-square distribution:</p>
+<ol>
+<li>All values of $x^{2}$ are greater than or equal to $0$.</li>
+<li><p>The chi-square distribution is a family of curves, each determined bythe degrees of freedom. To form a confidence interval for $\sigma^{2}$ , use the chi-square distribution with degrees of freedom equal to one less than the sample size.</p>
+<ul>
+<li>$df = n-1$</li>
+</ul>
+</li>
+<li><p>The total area under each chi-square distribution curve is equal to $1$.</p>
+</li>
+<li>The chi-square distribution is positively skewed and therefore the distribution is not symmetric.</li>
+<li>The chi-square distribution is different for each number of degrees of freedom, as shown in the figure. As the degrees of freedom increase, thechi-square distribution approaches a normal distribution.</li>
+</ol>
+<p><img src="./image/6_4_chi_square_distribution.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Critical-Values">Critical Values<a class="anchor-link" href="#Critical-Values">&#182;</a></h3><ul>
+<li>There are two critical values for each level of confidence. <ul>
+<li>$x_{R}^{2}$ represents the right-tail critical value.</li>
+<li>$x_{L}^{2}$ represents the left-tail critical value.</li>
+</ul>
+</li>
+</ul>
+<p><img src="./image/6_4_xr_plot.png" alt=""></p>
+<p><img src="./image/6_4_xl_plot.png" alt=""></p>
+<p><img src="./image/6_4_xl_xr_plot.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-Critical-Values-for-$X^{2}$-[example-1]">Finding Critical Values for $X^{2}$ [example 1]<a class="anchor-link" href="#Finding-Critical-Values-for-$X^{2}$-[example-1]">&#182;</a></h3><p>Find the critical values $x_{R}^{2}$ and $x_{L}^{2}$ for a $95\%$ confidence interval when the sample size is $18$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-Critical-Values-for-$X^{2}$-[solution]">Finding Critical Values for $X^{2}$ [solution]<a class="anchor-link" href="#Finding-Critical-Values-for-$X^{2}$-[solution]">&#182;</a></h3><ul>
+<li><p>Degree of freedom:</p>
+<ul>
+<li>$df = n - 1 = 18 - 1 = 17$</li>
+</ul>
+</li>
+<li><p>The areas to the right of $x_{R}^{2}$ and $x_{L}^{2}$ are:</p>
+<ul>
+<li>$x_{R}^{2} = \frac{1-c}{2} = \frac{1-0.95}{2} = 0.025$</li>
+<li>$x_{L}^{2} = \frac{1+c}{2} = \frac{1+0.95}{2} = 0.975$</li>
+</ul>
+</li>
+<li><p>Using $df = 17$ and the areas $0.975$ and $0.025$, we can find the critical values, as shown by the highlighted areas in the table.</p>
+</li>
+</ul>
+<p><img src="./image/6_4_ex_1_table.png" alt=""></p>
+<ul>
+<li>From the table, we can see that $x_{R}^{2} = 30.191$ and $x_{L}^{2} = 7.564$.</li>
+</ul>
+<p><img src="./image/6_4_ex_1_distribution_plot.png" alt=""></p>
+<h5 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">&#182;</a></h5><p>For a chi-square distribution curve with $17$ degrees of freedom, $95\%$ of the area under the curve lies between $7.564$ and $30.191$, as shown in the figure at the left.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">chi2</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">0.95</span>
+
+<span class="n">xr2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">xl2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;xr2: </span><span class="si">{xr2}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;xl2: </span><span class="si">{xl2}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">xr2_critical</span> <span class="o">=</span> <span class="n">chi2</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">xr2</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+<span class="n">xl2_critical</span> <span class="o">=</span> <span class="n">chi2</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">xl2</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;xr2_critical: </span><span class="si">{xr2_critical}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;xl2_critical: </span><span class="si">{xl2_critical}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>xr2: 0.025000000000000022
+xl2: 0.975
+
+xr2_critical: 30.19100912163982
+xl2_critical: 7.56418644957757
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chi2</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(7.56418644957757, 30.19100912163982)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Confidence-Intervals-for-$\sigma^{2}$-and-$\sigma$">Confidence Intervals for $\sigma^{2}$ and $\sigma$<a class="anchor-link" href="#Confidence-Intervals-for-$\sigma^{2}$-and-$\sigma$">&#182;</a></h3><ul>
+<li>We can use the critical values $x_{R}^{2}$ and $x_{L}^{2}$ to construct confidence intervals for a population variance and standard deviation. </li>
+<li>The best point estimate for the variance is $s^{2}$ and the best point estimate for the standard deviation is $s$. </li>
+<li>Because the chi-square distribution is not symmetric, the confidence interval for $\sigma^{2}$ cannot be written as $s^{2} \pm E$. </li>
+<li><p>We must do separate calculations for the endpoints of the confidence interval.</p>
+</li>
+<li><p>Confidence Interval for $\sigma^{2}$:</p>
+<ul>
+<li>$\frac{(n-1)s^{2}}{x_{R}^{2}} &lt; \sigma^{2} &lt; \frac{(n-1)s^{2}}{x_{L}^{2}}$</li>
+</ul>
+</li>
+<li><p>Confidence Interval for $\sigma$:</p>
+<ul>
+<li>$\sqrt{\frac{(n-1)s^{2}}{x_{R}^{2}}} &lt; \sigma &lt; \sqrt{\frac{(n-1)s^{2}}{x_{L}^{2}}}$</li>
+</ul>
+</li>
+<li><p>The probability that the confidence intervals contain $\sigma^{2}$ or $\sigma$ is $c$, assuming that the estimation process is repeated a large number of times.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Guidelines-for-Constructing-a-Confidence-Interval-for-a-Variance-and-Standard-Deviation">Guidelines for Constructing a Confidence Interval for a Variance and Standard Deviation<a class="anchor-link" href="#Guidelines-for-Constructing-a-Confidence-Interval-for-a-Variance-and-Standard-Deviation">&#182;</a></h3><ol>
+<li>Verify that the population has a normal distribution.</li>
+<li><p>Identify the sample statistic $n$ and the degrees of freedom.</p>
+<ul>
+<li>$df = n-1$</li>
+</ul>
+</li>
+<li><p>Find the point estimate $s^{2}$.</p>
+<ul>
+<li>$s^{2} = \frac{\sum{(x-\bar{x})^2}}{n-1}$</li>
+</ul>
+</li>
+<li><p>Find the critical values $x_{R}^{2}$ and $x_{L}^{2}$ that correspond to the given level of confidence $c$ and the degrees of freedom.</p>
+<ul>
+<li>using table</li>
+</ul>
+</li>
+<li><p>Find the left and right endpoints and form the confidence interval for the population variance.</p>
+<ul>
+<li>$\frac{(n-1)s^{2}}{x_{R}^{2}} &lt; \sigma^{2} &lt; \frac{(n-1)s^{2}}{x_{L}^{2}}$</li>
+</ul>
+</li>
+<li><p>Find the confidence interval for the population standard deviation by taking the square root of each endpoint.</p>
+<ul>
+<li>$\sqrt{\frac{(n-1)s^{2}}{x_{R}^{2}}} &lt; \sigma &lt; \sqrt{\frac{(n-1)s^{2}}{x_{L}^{2}}}$</li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Constructing-Confidence-Intervals-[example-2]">Constructing Confidence Intervals [example 2]<a class="anchor-link" href="#Constructing-Confidence-Intervals-[example-2]">&#182;</a></h3><ul>
+<li>You randomly select and weigh $30$ samples of an allergy medicine. </li>
+<li>The sample standard deviation ($s$) is $1.20$ milligrams. </li>
+<li>Assuming the weights are normally distributed, construct $99\%$ confidence intervals for the population variance ($\sigma^{2}$) and standard deviation ($\sigma$).</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Constructing-Confidence-Intervals-[solution]">Constructing Confidence Intervals [solution]<a class="anchor-link" href="#Constructing-Confidence-Intervals-[solution]">&#182;</a></h3><ul>
+<li><p>The areas to the right of $x_{R}^{2}$ and $x_{L}^{2}$ are:</p>
+<ul>
+<li>$x_{R}^{2} = \frac{1-c}{2} = \frac{1-0.99}{2} = 0.005$</li>
+<li>$x_{L}^{2} = \frac{1+c}{2} = \frac{1+0.99}{2} = 0.995$</li>
+</ul>
+</li>
+<li><p>Using the values $n = 30$, $df = 29$, and $c = 0.99$, the critical values $x_{R}^{2}$ and $x_{L}^{2}$ are:</p>
+<ul>
+<li>$x_{R}^{2} = 52.336$    </li>
+<li>$x_{L}^{2} = 13.121$</li>
+</ul>
+</li>
+<li><p>Using these critical values and $s = 1.20$, the confidence interval for $\sigma^{2}$ is:
+<img src="./image/6_4_ex_2_confidence_interval_for_variance.png" alt=""></p>
+</li>
+<li><p>The confidence interval for $\sigma$ is:
+<img src="./image/6_4_ex_2_confidence_interval_for_standard_deviation.png" alt=""></p>
+</li>
+</ul>
+<h5 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">&#182;</a></h5><p>With $99\%$ confidence, we can say that the population variance is between $0.80$ and $3.18$, and the population standard deviation is between $0.89$ and $1.78$ milligrams.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">chi2</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">0.99</span>
+
+<span class="n">xr2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">xl2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;xr2: </span><span class="si">{xr2}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;xl2: </span><span class="si">{xl2}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">xr2_critical</span> <span class="o">=</span> <span class="n">chi2</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">xr2</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+<span class="n">xl2_critical</span> <span class="o">=</span> <span class="n">chi2</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">xl2</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;xr2_critical: </span><span class="si">{xr2_critical}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;xl2_critical: </span><span class="si">{xl2_critical}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>xr2: 0.0050000000000000044
+xl2: 0.995
+
+xr2_critical: 52.335617785933614
+xl2_critical: 13.121148887960413
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chi2</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(13.121148887960413, 52.335617785933614)</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
