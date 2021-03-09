@@ -1,0 +1,292 @@
+---
+title: "Ujian Akhir Semester"
+subtitle: Jurusan Sistem Informasi, Tahun Akademik 2017/2018
+output:
+  unilur::examen_pdf:
+    id: no
+  unilur::examen_pdf_solution:
+    id: no
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+--------------  ----------------------------------------  --------------
+Mata kuliah     BS204 / Algoritma                           Pengesahan
+
+Semester        Genap                                        Kaprodi
+
+Sifat Ujian     Closed Book
+
+Hari / Tanggal  Rabu / 09.05.2018
+
+Waktu           120 menit
+
+Soal            Tidak Dibawa Pulang                        (__________)
+
+Pengajar        Setia Budi                                 NIK:________ 
+--------------  ----------------------------------------  --------------
+
+<p>**Kerjakan soal-soal berikut secara berurutan.**</p>
+<p>**Soal ujian ini disusun dengan mengacu pada Grokking Algorithms chapter 07 - chapter 11.**</p>
+<p>**Setiap soal memiliki bobot nilai 5.**</p>
+
+-----------------------------CHAPTER 07-----------------------------
+
+##### Carilah jalur terpendek dari graph berikut ini dengan menggunakan Djikstra's algorithm! Sertakan juga tabel yang menjelaskan proses yang berjalan!
+![](./final_exam-figure/djikstra.png)
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 07]</p>
+| Parent        | Node    | Cost                      |
+|---------------|:-------:|--------------------------:|
+| -             | A       | 0                         |
+| A             | B       | ~~$\infty$~~ 2            |
+| ~~A~~ ~~B~~ D | C       | ~~$\infty$~~ ~~6~~ ~~5~~ 4|
+| A             | D       | ~~$\infty$~~ 3            |
+| ~~B~~ ~~D~~ C | E       | ~~$\infty$~~ ~~8~~ ~~7~~ 6|
+
+A -> D -> C -> E
+```
+
+##### Jelaskan perbedaan mendasar antara Breadth First Search dan Djikstra's algorithm dalam menentukan jalur terpendek (shortest path)!
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 07]</p>
+Breadth First Search memilih jalur terpendek berdasarkan total jumlah segment terkecil sedangkan Djikstra algorithm memilih jalur terpendek berdasarkan total jumlah weight/cost terkecil.
+```
+
+##### Sebut dan jelaskan setidaknya tiga karakteristik yang harus dimiliki oleh suatu struktur data graph agar kita dapat menerapkan Djikstra's algorithm untuk mencari jalur terpendek!
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 07]</p>
+- directed: graph menggambarkan hubungan satu arah. 
+- acyclic: graph tidak memiliki bentuk hubungan yang melingkar/circular.
+- positive weighted: graph memiliki weight yang bernilai positive. Negative weight tidak dapat ditangani oleh Djikstra melainkan oleh Bellman Ford.
+
+```
+
+
+-----------------------------CHAPTER 08-----------------------------
+
+##### Anda diminta untuk melakukan alokasi penjadwalan mata pelajaran berikut ini ke dalam satu ruang kelas. Gunakan Greedy Algorithm dan perhatikan urutan sewaktu melakukan pengalokasian mata pelajaran!
+
+- CS: 10:30-11:00
+- Physic: 10:00-10:30
+- Art: 9:00-10:30
+- Math: 9:30-10:00
+- Eng: 10:00-11:00
+- Music: 11:00-12:00
+
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 08]</p>
+Math, Physic, CS, Music. 
+Greedy algorithm pada classroom scheduling problem akan memprioritaskan kelas yang berakhir paling awal yang masih bisa menempati alokasi kelas yang tersedia.
+```
+
+##### Anda diminta untuk mengambil sejumlah barang berikut ini dan memasukkannya ke dalam sebuah knapsack/tas berkapasitas maksimal 35lbs. Bila Anda berniat untuk memaksimalkan nilai perolehan dari barang yang akan dimasukkan, barang apa sajakah yang akan diambil? Gunakan Greedy Algorithm untuk menyelesaikan permasalahan ini dan perhatikan urutan pemasukkan barang!
+
+- Keyboard: $15, 10lbs
+- Monitor: $50, 30lbs
+- Laptop: $80, 20lbs
+- Mouse: $5, 5lbs
+- Smartphone: $70, 10lbs
+
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 08]</p>
+Laptop, Smartphone, Mouse. Greedy algorithm pada Knapsack Problem akan memprioritaskan barang dengan nilai perolehan tertinggi yang masih dapat menempati sisa kapasitas knapsack yang tersedia.
+```
+
+##### Anda diminta untuk memilih sejumlah stasiun radio dari daftar stasiun radio di bawah ini. Setiap stasiun radio menjangkau sejumlah daerah tertentu, sebagai contoh, stasiun radio K1 akan menjangkau wilayah ID dan MT. Apabila Anda menargetkan untuk menjangkau delapan daerah berikut ini: MT, NV, AZ, CA, UT, OR, ID, WA; gunakan Greedy Algorithm untuk menentukan stasiun radio yang akan dipilih! Perhatikan urutan pemilihan!
+
+- K1: ID, MT
+- K2: NV, AZ, MT
+- K3: UT, CA, OR, ID
+- K4: CA, WA
+- K5: MT, CA, AZ
+
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 08]</p>
+K3, K2, K4. Greedy algorithm pada Set Covering Problem akan memprioritaskan station dengan jangkauan terluas yang masih belum terjangkau.
+```
+
+##### Jelaskan apa itu set! Sertakan contoh sebagai pendukung penjelasan!
+
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 08]</p>
+Set adalah struktur data yang digunakan untuk menampung kumpulan data yang bersifat unik (tanpa duplikasi).
+<p>my_list = [1, 1, 2, 2, 3, 3, 3]</p>
+<p>my_set = set(my_list)</p>
+my_set akan berisi data: 1, 2, 3.
+```
+
+##### Sebut dan jelaskan operasi dasar pada set! Sertakan contoh sebagai pendukung penjelasan!
+
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 08]</p>
+- union: adalah operasi penggabungan dua buah set.
+- intersection: adalah operasi untuk mencari data yang beririsan dari dua buah set.
+- difference: adalah operasi pengurangan data dari suatu set yang beririsan dengan set yang lainnya.
+
+<p>A = set([1, 2, 3, 4, 5])</p>
+<p>B = set([4, 5, 6, 7, 8])</p>
+<p>C = A | B</p>
+<p>D = A & B</p>
+<p>E = A - B</p>
+<p>F = B - A</p>
+<p>C berisi hasil penggabungan (union) dari set A dan B; C akan berisi data: 1, 2, 3, 4, 5, 6, 7, 8.</p>
+<p>D berisi irisan (intersection) dari set A dan B; D akan berisi data: 4, 5.</p>
+<p>E berisi hasil pengurangan dari set A terhadap set B; E akan berisi data 1, 2, 3.</p>
+<p>F berisi hasil pengurangan dari set B terhadap set A; F akan berisi data 6, 7, 8.</p>
+```
+-----------------------------CHAPTER 09-----------------------------
+
+##### Anda diminta untuk mengambil sejumlah barang berikut ini dan memasukkannya ke dalam sebuah knapsack/tas berkapasitas maksimal 35lbs. Bila Anda berniat untuk memaksimalkan nilai perolehan dari barang yang akan dimasukkan, barang apa sajakah yang akan diambil? Gunakan Dynamic Programming untuk menyelesaikan permasalahan ini! Anda dapat menggunakan keterangan jenis barang ataupun total harga barang (pilih salah satu) di tiap cell dari grid yang dibuat.
+
+- Keyboard: $15, 10 lbs
+- Monitor: $50, 30 lbs
+- Mouse: $5, 5 lbs
+- Smartphone: $70, 10 lbs
+- Laptop: $80, 20 lbs
+
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 09]</p>
+| Item        | 5 lbs | 10 lbs | 15 lbs | 20 lbs | 25 lbs | 30 lbs | 35 lbs |
+|-------------|:-----:|-------:|-------:|-------:|-------:|-------:|-------:|
+| Keyboard    | $0    | $15    | $15    | $15    | $15    | $15    | $15    |
+| Monitor     | $0    | $15    | $15    | $15    | $15    | $50    | $50    |
+| Mouse       | $5    | $15    | $20    | $20    | $20    | $50    | $55    |
+| Smartphone  | $5    | $70    | $75    | $85    | $90    | $90    | $90    |
+| Laptop      | $5    | $70    | $5     | $85    | $90    | $150   | $155   |
+```
+
+##### Tentukan the longest common substring dari "SPORE" dan "SPARE". Selesaikan dengan Dynamic Programming.
+
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 09]</p>
+|   | S | P | A | R | E |
+|---|:-:|--:|--:|--:|--:|
+| S | 1 | 0 | 0 | 0 | 0 |
+| P | 0 | 2 | 0 | 0 | 0 |
+| O | 0 | 0 | 0 | 0 | 0 |
+| R | 0 | 0 | 0 | 1 | 0 |
+| E | 0 | 0 | 0 | 0 | 2 |
+```
+
+##### Tentukan the longest common subsequence dari "SPORE" dan "SPARE". Selesaikan dengan Dynamic Programming.
+
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 09]</p>
+|   | S | P | A | R | E |
+|---|:-:|--:|--:|--:|--:|
+| S | 1 | 1 | 1 | 1 | 1 |
+| P | 1 | 2 | 2 | 2 | 2 |
+| O | 1 | 2 | 2 | 2 | 2 |
+| R | 1 | 2 | 2 | 3 | 3 |
+| E | 1 | 2 | 2 | 3 | 4 |
+```
+
+##### Jelaskan perbedaan mendasar antara Greedy Algorithm dan Dynamic Programming!
+
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 09]</p>
+Greedy Algrithm memfokuskan pada local optima sedangkan Dynamic Programmming memfokuskan pada global optima.
+```
+
+
+-----------------------------CHAPTER 10-----------------------------
+
+##### Sebutkan dan jelaskan dua pemanfaatan dari K-Nearest Neighbours!
+
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 10]</p>
+- Classification: Melakukan pengelompokkan berdasarkan kedekatan dengan tetangga sekitarnya.
+- Regression: Melakukan prediksi atau estimasi nilai tertentu berdasarkan rata-rata nilai dari tetangga terdekatnya.
+```
+
+##### Jelaskan perbedaan antara Feature Selection dan Feature Extraction!
+
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 10]</p>
+Feature Selection adalah proses untuk memilih parameter yang akan digunakan untuk mengukur kedekatan antar entitas.
+Sedangkan Feature Extraction adalah proses untuk mendata nilai dari tiap parameter yang sudah dipilih sebelumnya (untuk mengukur kedekatan antar entitas). 
+```
+
+##### Gunakan K Nearest Neighbour dengan K=3 untuk menentukan neighbour dari Roti X dan Roti Y untuk kasus berikut ini!
+<p>Sebuah toko roti memproduksi lima jenis roti berbeda: Roti A, Roti B, Roti C, Roti D, Roti E.</p>
+<p> Roti A dibuat dengan kompisisi gula 3 gram, pengembang 4 gram, dan pewarna 2 gram.</p>
+<p>Roti B dibuat dengan kompisisi gula 4 gram, pengembang 3 gram, dan pewarna 5 gram.</p>
+<p>Roti C dibuat dengan kompisisi gula 4 gram, pengembang 5 gram, dan pewarna 1 gram.</p>
+<p>Roti D dibuat dengan kompisisi gula 1 gram, pengembang 1 gram, dan pewarna 3 gram.</p>
+<p>Roti E dibuat dengan kompisisi gula 4 gram, pengembang 5 gram, dan pewarna 4 gram.</p>
+
+<p>Tiap harinya, toko tersebut rata-rata berhasil menjual Roti A sebanyak 300 potong, Roti B 225 potong, Roti C 75 potong, Roti D 200 potong, dan Roti E 150 potong.</p>
+
+<p>Toko roti ini sedang mempersiapkan dua buah roti baru dengan komposisi sebagai berikut:</p>
+<p>Roti X: gula 3 gram, pengembang 3 gram, dan pewarna 3 gram.</p>
+<p>Roti Y: gula 5 gram, pengembang 5 gram, dan pewarna 5 gram.</p>
+
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 10]</p>
+
+|         | Gula | Pengembang | Pewarna | Penjualan | 
+|---------|:----:|-----------:|--------:|----------:|
+| Roti A  | 3 | 4 | 2 | 300 |
+| Roti B  | 4 | 3 | 5 | 225 |
+| Roti C  | 4 | 5 | 1 | 75  |
+| Roti D  | 1 | 1 | 3 | 200 |
+| Roti E  | 4 | 5 | 4 | 150 |
+| Roti X  | 3 | 3 | 3 | ?   |
+| Roti Y  | 5 | 5 | 5 | ?   |
+  
+  
+| distance| Roti A | Roti B | Roti C | Roti D | Roti E | 
+|---------|:------:|:------:|:------:|:------:|:------:|
+| Roti X  | $\sqrt{2}$ | $\sqrt{5}$ | $\sqrt{9}$ | $\sqrt{8}$ | $\sqrt{6}$ |
+| Roti Y  | $\sqrt{14}$| $\sqrt{5}$ | $\sqrt{17}$| $\sqrt{36}$| $\sqrt{2}$ |  
+  
+<p>K = 3</p>
+<p>Neighbour Roti X: Roti A, B, E</p>
+<p>Neighbour Roti Y: Roti E, B, A</p>
+```
+
+##### Dengan menggunakan kasus serupa pada soal sebelumnya, gunakan K Nearest Neighbour dengan K=2 untuk melakukan estimassi penjualan perhari untuk Roti X dan Roti Y!
+
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 10]</p>
+<p>K = 2</p>
+<p>Neighbour Roti X: Roti A, B. Estimasi penjualan: 262.5</p>
+<p>Neighbour Roti Y: Roti E, B. Estimasi penjualan: 187.5</p>
+```
+
+-----------------------------CHAPTER 11-----------------------------
+
+##### Gambarkan Binary Search Tree yang terbentuk dengan urutan pemasukan data sebagai berikut: John, David, Tom, Donny, Cherry, Mike, Tommy, Bob, Billy!
+
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 11]</p>
+![](./final_exam-figure/tree.png)
+```
+
+##### Gambarkan Binary Search Tree yang terbentuk dengan urutan pemasukan data sebagai berikut: John, Tom, David, Tommy, Mike, Donny, Bob, Cherry, Billy!
+
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 11]</p>
+![](./final_exam-figure/tree.png)
+```
+
+##### Jelaskan perbedaan antara locality-sensitive hash dan locality-insensitive hash! Sertakan juga contoh penerapan dari keduanya!
+
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 11]</p>
+<p>Pada locality-sensitive hash, perubahan kecil pada suatu string akan menghasilkan nilai hash yang tidak jauh berbeda. 
+Contoh penerapan pada SimHash yang digunakan dalam plagiarism check dan web page similarity.</p>
+<p>Pada locality-insensitive hash, perubahan kecil pada suatu string akan menghasilkan nilai hash yang jauh berbeda. 
+Contoh penerapan pada SHA yang digunakan untuk memeriksa apakah dua buah file adalah file yang identik, untuk mekanisme penyimpanan dan pengecekan password.</p>
+```
+
+##### Jelaskan perbedaan mendasar antara Parallel Programming dan MapReduce dalam menangani pekerjaan yang besar!
+
+```{asis, solution=FALSE, response.space=0.5}
+<p>[Chapter 11]</p>
+Parallel Programming akan memecah pekerjaan yang besar dan mendistribusikannya ke beberapa core CPU yang berbeda dalam satu mesin (komputer) yang sama.
+Sedangkan MapReduce akan memecah pekerjaan yang besar dan mendistribusikannya ke beberapa mesin (komputer) yang berbeda.
+```
+
